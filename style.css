@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+#logo{
+    margin-left: 20px;
+    color:blueviolet;
+    font-family: "DynaPuff", system-ui;
+    font-weight: 500;
+    font-size: 30px;
+   
+}
+.first-section{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.first-row{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+
+.calu{
+    background-color: blueviolet;
+    height: 50px;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 13px;
+    border-radius: 5px;
+    font-family:  "Bricolage Grotesque", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+
+
+}
+
+.second-section{
+    margin-bottom: 30px;
+}
+
+.second-row{
+    display: flex;
+    justify-content: center;
+}
+
+.break1{
+   display: flex;
+   margin: 0 20px;
+  
+}
+
+.break1 hr{
+    margin-left: 10px;
+    flex-grow: 1;
+   
+}
+.break1 h3{
+    font-family:  "Bricolage Grotesque", sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+
+
+.third-section{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+.third-row{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    
+}
+
+.third-col{
+    background-color: blueviolet;
+    height: 50px;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+.fourth-section{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.fourth-row{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 5px;
+}
+.fourth-col1{
+    background-color: blueviolet;
+    height: 50px;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 2px;
+    border-radius: 30px;
+}
+.fourth-col2{
+    background-color: blueviolet;
+    height: 50px;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 30px;
+}
+
+@media (min-width:800px) {
+    .fourth-col1{
+         padding-top: 10px;
+    }
+}
+
+.break2{
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.break2 h3{
+    font-family:  "Bricolage Grotesque", sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.break2 h6{
+    color: chocolate;
+    /* margin-top: 1px; */
+}
+
+.balu{
+    background-color: blueviolet;
+    height: 90px;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+
+
+.clubs-section{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.clubs-row{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+
+}
+
+.clubs-col{
+    background-color: blueviolet;
+    height: 50px;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: .4s;
+  border-radius: 5px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 0.1em;
+  border-radius: 0px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(0, 0, 0);
+}
+
+input:checked + .slider:before {
+  transform: translateX(2.8em) rotate(360deg);
+}
+
+
+.nav-div{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.nav-text{
+    font-family:  "Bricolage Grotesque", sans-serif;
+}
+
+@media (min-width:991px) {
+    #hide-nav{
+        display: none;
+
+    }
+    .switch{
+        margin-right: 20px;
+        margin-top: 4px;
+    }
+}
+
+.break4{
+    margin-top: 40px;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.break4 hr{
+    margin-left: 10px;
+    flex-grow: 1;
+}
+.break4 h3{
+    font-family:  "Bricolage Grotesque", sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+
+.navbar-toggler{
+    border: 0;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus{
+    outline: none;
+    box-shadow: none;
+    border: 0;
+}

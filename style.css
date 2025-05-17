@@ -84,8 +84,10 @@
     height: 50px;
     color: aliceblue;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 12px;
     border-radius: 5px;
+    /* font-size: 17px; */
+    font-weight: 500;
 }
 
 .fourth-section{
@@ -102,16 +104,22 @@
     height: 50px;
     color: aliceblue;
     text-align: center;
-    padding-top: 2px;
+    padding-top: 5px;
     border-radius: 30px;
+    font-weight: 500;
+    /* word-spacing: px; */
+    line-height: 21px;
+
 }
 .fourth-col2{
     background-color: blueviolet;
     height: 50px;
     color: aliceblue;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 12px;
     border-radius: 30px;
+    font-weight: 500;
+   
 }
 
 @media (min-width:800px) {

@@ -271,3 +271,8 @@ input:checked + .slider:before {
     box-shadow: none;
     border: 0;
 }
+
+#Version{
+    margin-top: 5px;
+    font-size: medium;
+}

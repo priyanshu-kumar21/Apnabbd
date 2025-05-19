@@ -1,39 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-      *{
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-        html,body{
-            height: 100%;
-            width: 100%;
-        }
-        #navbar{
-            height: 10%;
-            width: 100%;
-            background-color: rgb(120, 68, 168);
-            display: flex;
-            justify-content: flex-start;
-            gap: 15px;
-        }
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;;
 
-        .bi{
-            color: aliceblue;
-           
-        }
-        h1{
-            margin:13px 10px 10px 15px;
-            /* font-family: "IBM Plex Sans", sans-serif; */
+}
 
-        }
-        h3{
-            font-family: "IBM Plex Sans", sans-serif;
-            margin-top: 9px;
-            color: aliceblue;
-        }
-        p{
-            color: aliceblue;
-            font-size: 15px;
-              font-family: "IBM Plex Sans", sans-serif;
-        }
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: #a2a8d3;
+}
+
+.navbar{
+    margin-top: 12px;
+    margin-left: 10px;
+    color: #e7eaf6;
+}
+
+#arrow{
+    font-size: 35px;
+    color: #316370;
+}
+
+/* .heading{
+   border: 1px solid black;
+} */
+
+.news{
+      font-family: "Ubuntu", sans-serif;
+      color:#e7eaf6;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 30px;
+      margin-bottom: 5px;
+}
+.hrtag{
+    text-align: center;
+    background-color: #0c0c0c;
+    /* margin-top: 30px; */
+    height: 3px;
+    width: 50%;
+    margin: auto;
+    margin-bottom:50px;
+    
+}
+
+.news1{
+    
+    border: 2px dashed white;
+    margin: 0 10%;
+    margin-top: 20px;
+    width: 80%;
+    /* height: 100px; */
+    border-radius: 5px;
+}
+
+.news1text{
+    padding: 15px;
+    font-family:sans-serif;
+    color: #0c0c0c;
+}
+
+.news1date{
+    color: #393e46;
+    font-size: 10px;
+    margin-top: 8px;
+}

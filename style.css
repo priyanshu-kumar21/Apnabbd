@@ -146,13 +146,16 @@
 
 .balu{
     background-color: blueviolet;
-    height: 90px;
+    /* height: 90px; */
     color: aliceblue;
-    text-align: center;
-    padding-top: 10px;
+    /* text-align: center; */
+    padding:15px;
     border-radius: 5px;
 }
 
+.news-section{
+    margin-bottom: 30px;
+}
 
 
 .clubs-section{

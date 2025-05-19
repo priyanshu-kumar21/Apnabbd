@@ -26,7 +26,7 @@
 .calu{
     background-color: blueviolet;
     height: 50px;
-    color: aliceblue;
+    color: rgb(218, 222, 225);
     text-align: center;
     padding-top: 13px;
     border-radius: 5px;
@@ -140,7 +140,7 @@
     letter-spacing: 3px;
 }
 .break2 h6{
-    color: chocolate;
+    color: rgb(210, 57, 30);
     /* margin-top: 1px; */
 }
 

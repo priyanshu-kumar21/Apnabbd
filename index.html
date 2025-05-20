@@ -244,7 +244,7 @@
       .then(() => console.log('App shared successfully'))
       .catch((error) => console.error('Sharing failed', error));
     } else {
-      alert('Sharing is not supported on this device or App.');
+        window.open('https://apnabbd.netlify.app', '_blank');
     }
   }
 </script>

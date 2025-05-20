@@ -14,7 +14,7 @@ html,body{
 }
 
 body{
-    background-color: #a2a8d3;
+    background-color: white;
 }
 
 .navbar{
@@ -25,7 +25,7 @@ body{
 
 #arrow{
     font-size: 35px;
-    color: #316370;
+    color: #C68EFD;
 }
 
 /* .heading{
@@ -34,7 +34,7 @@ body{
 
 .news{
       font-family: "Ubuntu", sans-serif;
-      color:#e7eaf6;
+      color:#222831;
       font-weight: 600;
       text-align: center;
       margin-top: 40px;
@@ -43,7 +43,7 @@ body{
 }
 .hrtag{
     text-align: center;
-    background-color: #0c0c0c;
+    background-color: #C68EFD;
     /* margin-top: 30px; */
     height: 3px;
     width: 50%;
@@ -54,7 +54,7 @@ body{
 
 .news1{
     
-    border: 2px dashed white;
+    border: 2px dashed #C68EFD;
     margin: 0 10%;
     margin-top: 20px;
     width: 80%;

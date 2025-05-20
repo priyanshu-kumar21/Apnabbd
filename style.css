@@ -448,3 +448,11 @@ hr {
   -webkit-text-fill-color: transparent;
   
 }
+
+.foot{
+  display: flex;
+  margin: 16px;
+  align-items: start;
+  justify-content: start;
+  margin-bottom: 100px;
+}

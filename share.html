@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share ApnaBBD</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      background: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .icon-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: white;
+      transition: transform 0.2s ease;
+    }
+    .icon-btn:hover {
+      transform: scale(1.1);
+    }
+    .whatsapp { background-color: #25d366; }
+    .instagram { background: linear-gradient(45deg, #feda75, #d62976, #962fbf, #4f5bd5); }
+    .telegram { background-color: #0088cc; }
+    .snapchat { background-color: #fffc00; color: #000; }
+    .copy-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5 text-center">
+    <h2 class="mb-4 text-primary">Share App</h2>
+
+
+    
+
+    <!-- Row 1: Share Buttons -->
+    <div class="d-flex justify-content-center gap-4 flex-wrap mb-5 mt-5">
+      <a href="https://api.whatsapp.com/send?text=Download%20the%20ApnaBBD%20App%20for%20BBD%20Students:%20https://apnabbd.netlify.app" target="_blank" class="icon-btn whatsapp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="icon-btn instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://t.me/share/url?url=https://apnabbd.netlify.app&text=Download%20ApnaBBD%20App" target="_blank" class="icon-btn telegram">
+        <i class="fab fa-telegram-plane"></i>
+      </a>
+      <a href="https://www.snapchat.com/" target="_blank" class="icon-btn snapchat">
+        <i class="fab fa-snapchat-ghost"></i>
+      </a>
+    </div>
+
+    <!-- Row 2: Copy Link -->
+    <div class="mb-4">
+      <button class="btn btn-outline-primary copy-btn" onclick="copyLink()">
+        📋 Copy Download Link
+      </button>
+    </div>
+
+    <!-- Row 3: Note -->
+    <div class="text-muted">
+      <small>
+        ❗ If share options do not work properly, you can visit <a href="https://apnabbd.netlify.app" class="text-decoration-none">apnabbd.netlify.app</a> to download the app manually.
+      </small>
+    </div>
+  </div>
+
+  <script>
+    function copyLink() {
+      const link = "https://apnabbd.netlify.app";
+      navigator.clipboard.writeText(link)
+        .then(() => alert("Link copied to clipboard!"))
+        .catch(() => alert("Failed to copy link."));
+    }
+  </script>
+</body>
+</html>

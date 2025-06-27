@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyanshu | sci-calci</title>
+    <script src="https://kit.fontawesome.com/ac5523c42b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+  --bg-color: #ffffff;
+  --cont-color: #34383E;
+  --black: #000;
+  --gris: #777;
+  --white: #fff;
+  --display: #76ad8b;
+  --btn-action: #fd1258;
+  --git-chendo: #fd3938;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+    background-color: var(--bg-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    overflow: hidden;
+  }
+ 
+  h1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+  }
+  i.fa-github {
+    font-size: 1em;
+    color: var(--git-chendo);
+  }
+  h1 a {
+    text-decoration: none;
+    color: #010c0d;
+  }
+  /*<-------->*/
+  /*turn on off*/
+  .turn-on-off {
+    visibility: hidden;
+  }
+  /*<---------->*/
+  /*Fields show*/
+  .field-name {
+    display: flex;
+    justify-content: space-between;
+  }
+  p {
+    color: var(--white);
+  }
+  .field-name span {
+    color: var(--display);
+  }
+  .back-op {
+      background-color: var(--cont-color);
+      padding: .5em;
+      border-radius: .3em;
+      width: 15.7em;
+      border: .01em double var(--gris);
+      box-shadow: 2px 2px 2px 1px rgba(14, 14, 14, 0.7);
+  }
+  .field-result {
+      background-color: var(--display);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: .3em 0;
+      width: 100%;
+      height: 3.3em;
+  }
+  /*animation cursor field*/
+  .show-op { /* left display field*/
+    padding-left: .4em;
+    width: 15em;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+  }
+  .show-op::after {
+    content: '│';
+    color: var(--black);
+    animation: .9s animated  infinite;
+    -webkit-animation: .9s animated  infinite;
+  }
+  @keyframes animated {
+    from { opacity: 0; }
+    to { opacity: 1;}
+  }
+  /*<---------------->*/
+  .field-result input {
+    background-color: transparent;
+    padding-left: .4em;
+    user-select: none;
+    border: none;
+    outline: none;
+  }
+  .show-result {
+    margin: 0 .4em;
+    align-self: flex-end;
+    user-select: none;
+  }
+/*>-----show end------<*/
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+  }
+  .container-one {
+    display: grid;
+    grid-template-columns: repeat(6, 41.7px);
+    margin-bottom: .5em;
+  }
+  .container-two {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+  }
+  button {
+    background-color: var(--cont-color);
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 1px 1px 2px #000;
+    color: var(--white)
+  }
+  button:active {
+    background-color: #212429;
+  }
+  button.btn {
+    width: 2em;
+    height: 1em;
+    border-radius: 1em;
+  }
+  .btn-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-column span {
+    font-size: .6em;
+    text-align: center;
+    color: var(--white);
+  }
+  .btn {
+    padding: .5em;
+    margin: .2em;
+    cursor: pointer;
+  }
+  .btn-replay {
+    position: relative;
+    width: 5.5em;
+    height: 4em;
+    border-radius: 3em 3em 5em 5em;
+  }
+  /* btn scientific calculator*/
+  .btn-cs {
+    padding: .1em;
+    margin: .3em;
+    border-radius: .4em;
+    cursor: pointer;
+  }
+  .opacity {
+    visibility: hidden;
+  }
+  /*btn math*/
+  .btn-math {
+    padding: .5em;
+    margin: .2em;
+    border-radius: .5em 0 .5em 0;
+    cursor: pointer;
+  }
+  .btn-action {
+    background-color: var(--btn-action);
+  }
+  /*Kalyan calc v 0.01*/
+    </style>
+</head>
+<body>
+    <main class="container-all">
+       
+        <div class="back-op">
+            <div class="field-name"><!-- calculator name -->
+                 <a href="index.html" style="text-decoration: none;"> <h4 style="color: var(--white);"><i class="bi bi-arrow-left">BACK</i></h4></a>
+                <span>v 1.0.21</span>
+            </div><!-- shows fields -->
+            <div class="field-result"> 
+                <div class="show-op turn-on-off" id="texto"></div>
+                <input readonly autocomplete="off" id="results_calc" type="hidden" value="" size="28" maxlength="25">
+                <div class="show-result"></div>
+            </div>
+            <section class="container">
+                <div class="btn-column">
+                    <span>SHIFT</span>
+                    <button class="btn"></button>
+                </div>
+                <div class="btn-column">
+                    <span>ALPHA</span>
+                    <button class="btn"></button>
+                </div>
+                <button class="btn-replay">REPLAY</button>
+                <div class="btn-column">
+                    <span>MODE</span>
+                    <button class="btn"></button>
+                </div>
+                <div class="btn-column">
+                    <span>ON</span> <!-- on/off -->
+                    <button class="btn onOff"></button>
+                </div>
+            </section>
+            <section class="container-one"> <!-- add more values && more features -->
+                <button class="btn-cs x-1" value="*">x</button> 
+                <button class="btn-cs" value="equal">Calc</button>
+                <span class="btn-cs opacity"></span>
+                <span class="btn-cs opacity"></span>
+                <button class="btn-cs" value="3,1416">Pi</button>
+                <button class="btn-cs x3" value="pow">x³</button>
+                <button class="btn-cs">ab/c</button>
+                <button class="btn-cs" value="sqrt">√</button>
+                <button class="btn-cs" value="sq">x²</button>
+                <button class="btn-cs" value="^">^</button>
+                <button class="btn-cs" value="log">log</button>
+                <button class="btn-cs" value="ln">In</button>
+                <button class="btn-cs" value="-">(-)</button>
+                <button class="btn-cs">.,,,</button>
+                <button class="btn-cs">hyp</button>
+                <button class="btn-cs" value="sin">sin</button>
+                <button class="btn-cs" value="cos">cos</button>
+                <button class="btn-cs" value="tan">tan</button>
+                <button class="btn-cs">Rcl</button>
+                <button class="btn-cs">Eng</button>
+                <button class="btn-cs" value="(">(</button>
+                <button class="btn-cs" value=")">)</button>
+                <button class="btn-cs" value=",">,</button>
+                <button class="btn-cs" value="+">m+</button>
+              </section>
+              <section class="container-two">
+                <button class="btn-math" value="7">7</button>
+                <button class="btn-math" value="8">8</button>
+                <button class="btn-math" value="9">9</button>
+                <button class="btn-math btn-action" value="del">DEL</button>
+                <button class="btn-math btn-action" value="clear">AC</button>
+                <button class="btn-math" value="4">4</button>
+                <button class="btn-math" value="5">5</button>
+                <button class="btn-math" value="6">6</button>
+                <button class="btn-math" value="*">x</button>
+                <button class="btn-math" value="/">/</button>
+                <button class="btn-math" value="1">1</button>
+                <button class="btn-math" value="2">2</button>
+                <button class="btn-math" value="3">3</button>
+                <button class="btn-math" value="+">+</button>
+                <button class="btn-math" value="-">-</button>
+                <button class="btn-math" value="0">0</button>
+                <button class="btn-math" value=".">.</button>
+                <button class="btn-math" value="exp">EXP</button>
+                <button class="btn-math" value="ans">Ans</button>
+                <button class="btn-math" value="equal">=</button>
+             </section>
+        </div>      
+    </main> 
+
+    
+</body>
+
+<script src="app.js"></script>
+</html>

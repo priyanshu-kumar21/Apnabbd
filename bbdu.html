@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BBD University - ApnaBBD</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    .back-arrow {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      padding: 6px 12px;
+      border-radius: 20px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      z-index: 100;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 22px;
+      color: #0056b3;
+    }
+
+    .desc {
+      text-align: center;
+      font-size: 13px;
+      color: #444;
+      margin: 10px 25px 0;
+    }
+
+    .school-list {
+      max-width: 600px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0 25px;
+    }
+
+    .school-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      padding: 14px 16px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
+
+    .school-card:hover {
+      background-color: #e6f3ff;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 20px; }
+      .school-card { font-size: 13px; padding: 12px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="bbdgroup.html" class="back-arrow">&#8592; Back</a>
+
+<h1>BBD UNIVERSITY</h1>
+
+<p class="desc">
+  Choose your school from below to access the syllabus and important academic resources for your course.
+</p>
+
+<div class="school-list">
+
+  <a href="syllabus.html" class="school-card">School of Engineering (SoE)</a>
+  <a href="#" class="school-card">School of Management (SoM)</a>
+  <a href="#" class="school-card">School of Computer Applications</a>
+  <a href="#" class="school-card">School of Pharmacy</a>
+  <a href="#" class="school-card">School of Hotel Management</a>
+  <a href="#" class="school-card">School of Architecture</a>
+  <a href="#" class="school-card">School of Legal Studies</a>
+
+</div>
+
+</body>
+</html>

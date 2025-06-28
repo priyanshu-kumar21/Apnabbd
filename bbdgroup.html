@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BBD Group - ApnaBBD</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    .back-arrow {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      padding: 6px 12px;
+      border-radius: 20px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      z-index: 100;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 22px;
+      color: #0056b3;
+    }
+
+    .desc {
+      text-align: center;
+      font-size: 13px;
+      color: #444;
+      margin: 10px 25px 0;
+    }
+
+    .college-list {
+      max-width: 600px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0 25px;
+    }
+
+    .college-card {
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      padding: 8px 12px;
+      text-decoration: none;
+      color: #333;
+      height: 60px;
+    }
+
+    .college-card img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-right: 12px;
+    }
+
+    .college-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.2;
+    }
+
+    .college-short {
+      font-size: 14px;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .college-full {
+      font-size: 11px;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 20px; }
+      .college-short { font-size: 13px; }
+      .college-full { font-size: 10px; }
+      .college-card { height: 55px; }
+      .college-card img { width: 35px; height: 35px; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="back-arrow">&#8592; Back</a>
+
+<h1>BBD GROUP</h1>
+
+<p class="desc">
+  Select your college from the list below to explore its syllabus, updates, and more. This page is designed to help BBD Group students find their respective college easily.
+</p>
+
+<div class="college-list">
+
+  <a href="#" class="college-card">
+    <img src="image/image.png" alt="BBDU">
+    <div class="college-info">
+      <div class="college-short">BBDU</div>
+      <div class="college-full">Babu Banarasi Das University</div>
+    </div>
+  </a>
+
+  <a href="#" class="college-card">
+    <img src="image/image copy.png" alt="NIIT">
+    <div class="college-info">
+      <div class="college-short">BBD NIIT</div>
+      <div class="college-full">Babu Banarasi Das Northern India Institute of Technology</div>
+    </div>
+  </a>
+
+  <a href="#" class="college-card">
+    <img src="image/image copy 2.png" alt="BBDITM">
+    <div class="college-info">
+      <div class="college-short">BBDITM</div>
+      <div class="college-full">Babu Banarasi Das Institute of Technology & Management</div>
+    </div>
+  </a>
+
+  <a href="#" class="college-card">
+    <img src="image/image copy 3.png" alt="BBDEC">
+    <div class="college-info">
+      <div class="college-short">BBDEC</div>
+      <div class="college-full">Babu Banarasi Das Engineering College</div>
+    </div>
+  </a>
+
+  <a href="#" class="college-card">
+    <img src="image/image copy 4.png" alt="CODS">
+    <div class="college-info">
+      <div class="college-short">BBDCODS</div>
+      <div class="college-full">Babu Banarasi Das College of Dental Sciences</div>
+    </div>
+  </a>
+
+</div>
+
+</body>
+</html>

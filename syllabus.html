@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Syllabus - ApnaBBD</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f0ff;
+      color: #333;
+    }
+
+    /* Back arrow */
+    .back-arrow {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  padding: 8px 14px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+
+.back-arrow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #0056b3, #00a6e0);
+}
+
+    h1 {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 30px;
+      color: #0056b3;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+      
+      font-size: 15px;
+      color: #555;
+    }
+
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto 20px;
+      padding: 0 20px;
+    }
+
+    #search {
+      width: 90%;
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .syllabus-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 0 20px 100px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin: 25px 0 10px;
+      font-weight: bold;
+      color: #444;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .syllabus-link {
+      display: block;
+      padding: 12px 16px;
+      background-color: #fff;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: #333;
+      transition: background 0.2s;
+    }
+
+    .syllabus-link:hover {
+      background-color: #d6eaff;
+    }
+
+    /* A-Z Index */
+    .index-bar {
+      position: fixed;
+      right: 1px;
+      top: 165px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7px;
+      z-index: 99;
+    }
+
+    .index-bar a {
+      text-decoration: none;
+      font-size: 4px;
+      color: #007bff;
+      padding: 1.2px;
+    }
+
+    .index-bar a:hover {
+      font-weight: bold;
+      color: #004494;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 24px; }
+      .section-title { font-size: 18px; }
+      .syllabus-link { font-size: 15px; }
+      .index-bar a { font-size: 12px; }
+    }
+
+
+    
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="back-arrow">
+  &#8592; Back
+</a>
+
+<h1>Syllabus</h1>
+<p>📚 Here you can easily view and download the syllabus of different subjects. Just click on any subject name below to open the syllabus PDF.</p>
+
+<div class="search-box">
+  <input type="text" id="search" placeholder="Search subject...">
+</div>
+
+<div class="syllabus-container" id="syllabus-list">
+  
+  <!-- A -->
+  <div id="A">
+    <div class="section-title">A</div>
+    <a href="https://drive.google.com/your-AI-link" class="syllabus-link">Artificial Intelligence</a>
+  </div>
+
+  <!-- C -->
+  <div id="C">
+    <div class="section-title">C</div>
+    <a href="https://drive.google.com/your-COA-link" class="syllabus-link">Computer Organization & Architecture</a>
+    <a href="https://drive.google.com/your-CN-link" class="syllabus-link">Computer Networks</a>
+  </div>
+
+  <!-- D -->
+  <div id="D">
+    <div class="section-title">D</div>
+    <a href="https://drive.google.com/your-DS-link" class="syllabus-link">Data Structures</a>
+    <a href="https://drive.google.com/your-DBMS-link" class="syllabus-link">Database Management System</a>
+  </div>
+
+  <!-- M -->
+  <div id="M">
+    <div class="section-title">M</div>
+    <a href="https://drive.google.com/your-Math-link" class="syllabus-link">Mathematics</a>
+  </div>
+
+  <!-- O -->
+  <div id="O">
+    <div class="section-title">O</div>
+    <a href="https://drive.google.com/your-OS-link" class="syllabus-link">Operating System</a>
+  </div>
+
+  <!-- S -->
+  <div id="S">
+    <div class="section-title">S</div>
+    <a href="https://drive.google.com/your-SE-link" class="syllabus-link">Software Engineering</a>
+  </div>
+
+</div>
+
+<!-- A-Z Index Bar -->
+<div class="index-bar">
+  <a href="#A">A</a>
+  <a href="#B">B</a>
+  <a href="#C">C</a>
+  <a href="#D">D</a>
+  <a href="#E">E</a>
+  <a href="#F">F</a>
+  <a href="#G">G</a>
+  <a href="#H">H</a>
+  <a href="#I">I</a>
+  <a href="#J">J</a>
+  <a href="#K">K</a>
+  <a href="#L">L</a>
+  <a href="#M">M</a>
+  <a href="#N">N</a>
+  <a href="#O">O</a>
+  <a href="#P">P</a>
+  <a href="#Q">Q</a>
+  <a href="#R">R</a>
+  <a href="#S">S</a>
+  <a href="#T">T</a>
+  <a href="#U">U</a>
+  <a href="#V">V</a>
+  <a href="#W">W</a>
+  <a href="#X">X</a>
+  <a href="#Y">Y</a>
+  <a href="#Z">Z</a>
+</div>
+
+<!-- Search Function -->
+<script>
+  const search = document.getElementById('search');
+  const syllabusLinks = document.querySelectorAll('.syllabus-link');
+
+  search.addEventListener('keyup', () => {
+    const value = search.value.toLowerCase();
+    syllabusLinks.forEach(link => {
+      const text = link.textContent.toLowerCase();
+      link.style.display = text.includes(value) ? 'block' : 'none';
+    });
+  });
+</script>
+
+<script>
+  const placeholderText = "Search subject...";
+  const searchInput = document.getElementById("search");
+
+  let i = 0;
+  function typeEffect() {
+    if (i < placeholderText.length) {
+      searchInput.setAttribute("placeholder", placeholderText.substring(0, i + 1));
+      i++;
+      setTimeout(typeEffect, 100); // typing speed
+    } else {
+      setTimeout(() => {
+        i = 0;
+        searchInput.setAttribute("placeholder", "");
+        setTimeout(typeEffect, 1000); // wait before restart
+      }, 2000); // how long the full text stays
+    }
+  }
+
+  typeEffect();
+</script>
+
+
+</body>
+</html>

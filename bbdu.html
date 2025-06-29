@@ -5,11 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BBD University - ApnaBBD</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f0f8ff;
+      background: linear-gradient(to bottom, #e0f2ff, #cce5ff);
       color: #333;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding-bottom: 50px;
     }
 
     .back-arrow {
@@ -33,14 +46,14 @@
     h1 {
       text-align: center;
       margin-top: 60px;
-      font-size: 22px;
-      color: #0056b3;
+      font-size: 26px;
+      color: #004488;
     }
 
     .desc {
       text-align: center;
-      font-size: 13px;
-      color: #444;
+      font-size: 14px;
+      color: #333;
       margin: 10px 25px 0;
     }
 
@@ -49,52 +62,122 @@
       margin: 20px auto;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
       padding: 0 25px;
     }
 
     .school-card {
       background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-      padding: 14px 16px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 16px 18px;
       text-decoration: none;
-      color: #333;
+      color: #0056b3;
       font-weight: 600;
-      font-size: 14px;
-      transition: background-color 0.2s;
+      font-size: 15px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .school-card:hover {
-      background-color: #e6f3ff;
+      background-color: #d6eaff;
+      transform: translateY(-2px);
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 20px; }
-      .school-card { font-size: 13px; padding: 12px 14px; }
+      h1 { font-size: 22px; }
+      .school-card { font-size: 14px; padding: 14px 16px; }
+    }
+
+    /* Background Animation */
+    .box {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .box ul li {
+      position: absolute;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0.7em solid white;
+      border-left: 0.3em solid transparent;
+      opacity: 0;
+      animation: animate 15s linear infinite;
+    }
+
+    .box ul li::before,
+    .box ul li::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 0.6em;
+      left: -1em;
+      border-right: 1em solid transparent;
+      border-bottom: 0.7em solid white;
+      border-left: 1em solid transparent;
+      transform: rotate(-35deg);
+    }
+
+    .box ul li::after {
+      transform: rotate(35deg);
+    }
+
+    .box ul li:nth-child(1) { left: 10vw; animation-delay: 0s; }
+    .box ul li:nth-child(2) { left: 25vw; animation-delay: 2s; }
+    .box ul li:nth-child(3) { left: 40vw; animation-delay: 4s; }
+    .box ul li:nth-child(4) { left: 55vw; animation-delay: 6s; }
+    .box ul li:nth-child(5) { left: 70vw; animation-delay: 4s; }
+    .box ul li:nth-child(6) { left: 85vw; animation-delay: 8s; }
+
+    @keyframes animate {
+      0% {
+        transform: scale(0) rotate(0);
+        opacity: 1;
+        bottom: 0;
+      }
+      100% {
+        transform: scale(5) rotate(360deg);
+        opacity: 0;
+        bottom: 100vh;
+      }
     }
   </style>
 </head>
 <body>
 
-<a href="bbdgroup.html" class="back-arrow">&#8592; Back</a>
+<div class="content">
 
-<h1>BBD UNIVERSITY</h1>
+  <a href="bbdgroup.html" class="back-arrow">&#8592; Back</a>
 
-<p class="desc">
-  Choose your school from below to access the syllabus and important academic resources for your course.
-</p>
+  <h1>BBD UNIVERSITY</h1>
 
-<div class="school-list">
+  <p class="desc">
+    Choose your school from below to access the syllabus and important academic resources for your course.
+  </p>
 
-  <a href="syllabus.html" class="school-card">School of Engineering (SoE)</a>
-  <a href="#" class="school-card">School of Management (SoM)</a>
-  <a href="#" class="school-card">School of Computer Applications</a>
-  <a href="#" class="school-card">School of Pharmacy</a>
-  <a href="#" class="school-card">School of Hotel Management</a>
-  <a href="#" class="school-card">School of Architecture</a>
-  <a href="#" class="school-card">School of Legal Studies</a>
+  <div class="school-list">
+    <a href="syllabus.html" class="school-card">School of Engineering (SoE)</a>
+    <a href="#" class="school-card">School of Management (SoM)</a>
+    <a href="#" class="school-card">School of Computer Applications</a>
+    <a href="#" class="school-card">School of Pharmacy</a>
+    <a href="#" class="school-card">School of Hotel Management</a>
+    <a href="#" class="school-card">School of Architecture</a>
+    <a href="#" class="school-card">School of Legal Studies</a>
+  </div>
+</div>
 
+<!-- Background animation layer -->
+<div class="box">
+  <ul>
+    <li></li><li></li><li></li><li></li><li></li><li></li>
+  </ul>
 </div>
 
 </body>

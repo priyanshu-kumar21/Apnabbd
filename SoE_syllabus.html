@@ -138,6 +138,24 @@
 </head>
 <body>
 
+
+  <!-- Info Button (Top Right) -->
+<button id="infoBtn" style="
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 200;">i</button>
+
+
 <a href="bbdu.html" class="back-arrow">
   &#8592; Back
 </a>
@@ -334,6 +352,38 @@
   <a href="#Z">Z</a>
 </div>
 
+
+<!-- Info Modal -->
+<div id="infoModal" style="
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: #333;
+  border-radius: 10px;
+  padding: 25px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 999;
+  text-align: center;
+">
+  <h3 style="margin-top: 0;">Available Streams</h3>
+  <ul style="list-style: none; padding: 0; margin-bottom: 15px;">
+    <li>• B.TECH - CSE</li>
+    <li>• B.TECH - CSE-AI</li>
+    <li>• B.TECH - CSE-CCML</li>
+    <li>• B.TECH - CSE-AIBC</li>
+  </ul>
+  <p style="font-size: 14px; color: #666;">📌 Note: Syllabus may change with time. Please verify the latest syllabus from your department or official circular.</p>
+  <button onclick="closeModal()" style="margin-top: 15px; background: #007bff; color: white; border: none; padding: 8px 20px; border-radius: 6px; cursor: pointer;">Close</button>
+</div>
+
+
+
+
 <!-- Search Function -->
 <script>
   const search = document.getElementById('search');
@@ -369,6 +419,27 @@
 
   typeEffect();
 </script>
+
+<script>
+  const infoBtn = document.getElementById('infoBtn');
+  const infoModal = document.getElementById('infoModal');
+
+  infoBtn.addEventListener('click', () => {
+    infoModal.style.display = 'block';
+  });
+
+  function closeModal() {
+    infoModal.style.display = 'none';
+  }
+
+  // Optional: Close modal on outside click
+  window.addEventListener('click', (e) => {
+    if (e.target === infoModal) {
+      infoModal.style.display = 'none';
+    }
+  });
+</script>
+
 
 
 </body>

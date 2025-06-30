@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Syllabus - ApnaBBD</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f0ff;
+      color: #333;
+    }
+
+    /* Back arrow */
+    .back-arrow {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  padding: 8px 14px;
+  /* padding-bottom: 12px; */
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+
+.back-arrow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #0056b3, #00a6e0);
+}
+
+    h1 {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 30px;
+      color: #0056b3;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+      
+      font-size: 15px;
+      color: #555;
+    }
+
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto 20px;
+      padding: 0 20px;
+    }
+
+    #search {
+      width: 90%;
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .syllabus-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 0 20px 100px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin: 25px 0 10px;
+      font-weight: bold;
+      color: #444;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .syllabus-link {
+      display: block;
+      padding: 12px 16px;
+      background-color: #fff;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: #333;
+      transition: background 0.2s;
+    }
+
+    .syllabus-link:hover {
+      background-color: #d6eaff;
+    }
+
+    /* A-Z Index */
+    .index-bar {
+      position: fixed;
+      right: 1px;
+      top: 270px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      z-index: 99;
+    }
+
+    .index-bar a {
+      text-decoration: none;
+      font-size: 4px;
+      color: #007bff;
+      padding: 2px;
+    }
+
+    .index-bar a:hover {
+      font-weight: bold;
+      color: #004494;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 24px; }
+      .section-title { font-size: 18px; }
+      .syllabus-link { font-size: 15px; }
+      .index-bar a { font-size: 12px; }
+    }
+
+
+    
+  </style>
+</head>
+<body>
+
+<a href="bbdgroup.html" class="back-arrow">
+  &#8592; Back
+</a>
+
+<h1>School of Management <br> Syllabus</h1>
+<p>📚 Here you can easily view and download the syllabus of different subjects. Just click on any subject name below to open the syllabus PDF.</p>
+
+<div class="search-box">
+  <input type="text" id="search" placeholder="Search subject...">
+</div>
+
+<div class="syllabus-container" id="syllabus-list">
+  
+  <!-- A -->
+  <div id="A">
+    <div class="section-title">A</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=39" class="syllabus-link">Advertising and Personal Selling - NGE5704</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=108" class="syllabus-link">Auditing - NDSE57110</a>
+  </div>
+
+
+  <div id="B">
+    <div class="section-title">B</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=21"  class="syllabus-link">Business Environment- NBBA5102</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=32" " class="syllabus-link">Business Mathematics- NBBA5202</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=34" " class="syllabus-link">Business Organisation- NBBA5203</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=55"  class="syllabus-link">Business Law - NBBA5403</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=61"  class="syllabus-link">Business Policy and Strategy - NBBA5501</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=82"  class="syllabus-link">Business Ethics and Indian Value System - NDSE57103</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=90"  class="syllabus-link">Banking and Insurance  - NBBA5701</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=104"  class="syllabus-link">Brand Management  - NBBA5801</a>
+
+  </div>
+
+  <!-- C -->
+  <div id="C">
+    <div class="section-title">C</div> 
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=51" class="syllabus-link">Cost and Management Accounting - NBBA5401</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=57" class="syllabus-link">Cyber Security - NGE5707</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=69" class="syllabus-link">Consumer Behaviour - NDSE57102 </a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=102" class="syllabus-link">Creativity and Innovation - NGE5714 </a>
+  </div>
+
+  <!-- D -->
+  <div id="D">
+    <div class="section-title">D</div> 
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=71" class="syllabus-link">Database Management System - NGE5709</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=86" class="syllabus-link">Digital Governance  - NGE5711</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=114" class="syllabus-link">Data Communication and Networks - NGE5715</a>
+  </div>
+
+
+  <div id="E">
+    <div class="section-title">E</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=47" class="syllabus-link">E-Commerce - NGE5705</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=77" class="syllabus-link">Entrepreneurship and Small Business Management - NBBA5602</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=88" class="syllabus-link">Event Management - NGE5712</a>
+  </div>
+
+  <div id="F">
+    <div class="section-title">F</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=19" class="syllabus-link">Fundamentals of Accounting - NBBA5101</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=65" class="syllabus-link">Financial Management - NBBA5503</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=73" class="syllabus-link">Financial Services - NGE5710</a>
+  </div>
+
+
+
+  <div id="G">
+    <div class="section-title">G</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=112" class="syllabus-link">Goods & Services Tax - NDSE57112</a>
+  </div>
+
+
+
+  <div id="H">
+    <div class="section-title">H</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=53" class="syllabus-link">Human Resource Management & Development - NBBA5402</a>
+  </div>
+
+  <!-- I -->
+  <div id="I">
+    <div class="section-title">I</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=59" class="syllabus-link">Investment Management - NGE5708</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=75" class="syllabus-link">International Business Management - NBBA5601</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=94" class="syllabus-link">International Financial Management - NDSE57106</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=96" class="syllabus-link">IncomeTax Law &Practices - NDSE57107</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=98" class="syllabus-link">Indian Economy - NDSE57108</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=106" class="syllabus-link">Integrated Marketing Communication - NDSE57109</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=110" class="syllabus-link">Industrial Relations and Labour Laws - NDSE57111</a>
+  </div>
+
+
+
+  
+
+
+
+  <div id="M">
+    <div class="section-title">M</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=36" class="syllabus-link">Management Information System - NGE5703</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=43" class="syllabus-link">Managerial Economics - NBBA5302</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=45" class="syllabus-link">Marketing Management - NBBA5303</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=92" class="syllabus-link">Marketing of Services - NDSE57105</a>
+  </div>
+
+
+
+
+
+
+  <div id="N">
+    <div class="section-title">N</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=49" class="syllabus-link">New Venture Planning & Development - NGE5706</a>    
+  </div>
+
+
+
+
+
+  <!-- O -->
+  <div id="O">
+    <div class="section-title">O</div> 
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=30" class="syllabus-link">Organization Behaviour and Principles of Management - NBBA5201</a>
+  </div>
+
+
+
+
+
+  <div id="P">
+    <div class="section-title">P</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=28" class="syllabus-link">Personal Finance And Planning  - NGE5702</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=41" class="syllabus-link">Production and Operations Management
+  - NBBA5301</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=63" class="syllabus-link">Project Management - NBBA5502</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=116" class="syllabus-link">People Management - NGE5716</a>
+  </div>
+
+
+
+
+  <div id="Q">
+    <div class="section-title">Q</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=23" class="syllabus-link">Quantitative Analysis for Management  - NBBA5103</a>
+  </div>
+
+
+
+
+  <div id="R">
+    <div class="section-title">R</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=79" class="syllabus-link">Rural Management - NBBA5603</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=84" class="syllabus-link">Research Methodology - NDSE57104</a>
+  </div>
+
+
+
+
+
+  <!-- S -->
+  <div id="S">
+    <div class="section-title">S</div>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=67" class="syllabus-link">Supply Chain Management - NDSE57101</a>
+    <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/bba-w.e.f.-session-2023-24-as-per-nep-2020-min.pdf#page=100" class="syllabus-link">System Analysis and Designing - NGE5713</a>
+  </div>
+
+</div>
+
+<!-- A-Z Index Bar -->
+<div class="index-bar">
+  <a href="#A">A</a>
+  <a href="#B">B</a>
+  <a href="#C">C</a>
+  <a href="#D">D</a>
+  <a href="#E">E</a>
+  <a href="#F">F</a>
+  <a href="#G">G</a>
+  <a href="#H">H</a>
+  <a href="#I">I</a>
+  <a href="#J">J</a>
+  <a href="#K">K</a>
+  <a href="#L">L</a>
+  <a href="#M">M</a>
+  <a href="#N">N</a>
+  <a href="#O">O</a>
+  <a href="#P">P</a>
+  <a href="#Q">Q</a>
+  <a href="#R">R</a>
+  <a href="#S">S</a>
+  <a href="#T">T</a>
+  <a href="#U">U</a>
+  <a href="#V">V</a>
+  <a href="#W">W</a>
+  <a href="#X">X</a>
+  <a href="#Y">Y</a>
+  <a href="#Z">Z</a>
+</div>
+
+<!-- Search Function -->
+<script>
+  const search = document.getElementById('search');
+  const syllabusLinks = document.querySelectorAll('.syllabus-link');
+
+  search.addEventListener('keyup', () => {
+    const value = search.value.toLowerCase();
+    syllabusLinks.forEach(link => {
+      const text = link.textContent.toLowerCase();
+      link.style.display = text.includes(value) ? 'block' : 'none';
+    });
+  });
+</script>
+
+<script>
+  const placeholderText = "Search subject...";
+  const searchInput = document.getElementById("search");
+
+  let i = 0;
+  function typeEffect() {
+    if (i < placeholderText.length) {
+      searchInput.setAttribute("placeholder", placeholderText.substring(0, i + 1));
+      i++;
+      setTimeout(typeEffect, 100); // typing speed
+    } else {
+      setTimeout(() => {
+        i = 0;
+        searchInput.setAttribute("placeholder", "");
+        setTimeout(typeEffect, 1000); // wait before restart
+      }, 2000); // how long the full text stays
+    }
+  }
+
+  typeEffect();
+</script>
+
+
+</body>
+</html>

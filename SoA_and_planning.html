@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Syllabus - ApnaBBD</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5faff;
+      color: #333;
+    }
+
+    .back-arrow {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      padding: 8px 14px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .back-arrow:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #0056b3, #00a6e0);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 28px;
+      color: #0056b3;
+    }
+
+    p {
+      text-align: center;
+      margin: 10px 20px 30px;
+      font-size: 15px;
+      color: #555;
+    }
+
+    .syllabus-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 0 20px 100px;
+    }
+
+    .syllabus-link {
+      display: block;
+      padding: 12px 16px;
+      background-color: #fff;
+      margin-bottom: 10px;
+      border-left: 4px solid #007bff;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-decoration: none;
+      color: #333;
+      transition: all 0.2s;
+    }
+
+    .syllabus-link:hover {
+      background-color: #eaf4ff;
+      transform: scale(1.01);
+    }
+
+    #infoBtn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 200;
+    }
+
+    #infoModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: #333;
+      border-radius: 10px;
+      padding: 25px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      z-index: 999;
+      text-align: center;
+    }
+
+    #infoModal ul {
+      text-align: left;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+
+    #infoModal button {
+      display: block;
+      margin: 15px auto 0;
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 24px; }
+      .syllabus-link { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <button id="infoBtn">i</button>
+
+  <a href="bbdu.html" class="back-arrow">&#8592; Back</a>
+
+  <h1>School of Architecture & Planning<br>Syllabus</h1>
+  <p>📚 Here you can easily view and download the syllabus of different Programs. Just click on any Program name below to open the syllabus PDF.</p>
+
+  <div class="syllabus-container" id="syllabus-list">
+    <a href="https://bbdu.ac.in/wp-content/uploads/2021/09/b-id-syllabus-cbcs-system.pdf" class="syllabus-link">Bachelor of Architecture</a>
+    <a href="https://bbdu.ac.in/wp-content/uploads/2024/08/m.plan-syllabus-signeed-2022-2023-12-10-2022_revised-compressed.pdf" class="syllabus-link">Master of Planning (Urban Planning)</a>
+    <a href="https://bbdu.ac.in/wp-content/uploads/2024/08/b-id-syllabus-cbcs-system-compressed.pdf" class="syllabus-link">Bachelor of Interior Design</a>
+  </div>
+
+  <div id="infoModal">
+    <p style="font-size: 14px; color: #666;">📌 <strong>Note:</strong> Syllabus may change over time. Please verify the latest syllabus from your department or official circular.</p>
+    <ul>
+      <li>Architecture</li>
+      <li>Interior Design</li>
+      <li>Urban Planning</li>
+    </ul>
+    <button onclick="closeModal()">Close</button>
+  </div>
+
+  <script>
+    const infoBtn = document.getElementById('infoBtn');
+    const infoModal = document.getElementById('infoModal');
+
+    infoBtn.addEventListener('click', () => {
+      infoModal.style.display = 'block';
+    });
+
+    function closeModal() {
+      infoModal.style.display = 'none';
+    }
+
+    window.addEventListener('click', (e) => {
+      if (e.target === infoModal) {
+        infoModal.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

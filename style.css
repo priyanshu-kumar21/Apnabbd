@@ -177,6 +177,46 @@
 }
 
 
+.grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      gap: 20px;
+      max-width: 600px;
+      margin: auto;
+      margin-top: 5px;
+    }
+
+    .icon-box {
+      background: #ffffff;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+
+    .icon-box:hover {
+      transform: scale(1.05);
+    }
+
+    .icon-box i {
+      font-size: 28px;
+      color: blueviolet;
+    }
+
+    .label {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 8px;
+      color: #333;
+    }
+
+
 /* The switch - the box around the slider */
 .switch {
   font-size: 17px;

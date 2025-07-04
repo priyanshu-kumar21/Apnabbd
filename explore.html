@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore BBD</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 30px 10px;
+      background: #f8f9fa;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #0056b3;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      gap: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .icon-box {
+      background: #ffffff;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+
+    .icon-box:hover {
+      transform: scale(1.05);
+    }
+
+    .icon-box i {
+      font-size: 28px;
+      color: #007bff;
+    }
+
+    .label {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 8px;
+      color: #333;
+    }
+
+    .dot {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      height: 10px;
+      width: 10px;
+      background-color: orange;
+      border-radius: 50%;
+    }
+
+
+
+    .box {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .box ul li {
+      position: absolute;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0.7em solid #00c6ff;
+      border-left: 0.3em solid transparent;
+      opacity: 0;
+      animation: animate 15s linear infinite;
+    }
+
+    .box ul li::before,
+    .box ul li::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 0.6em;
+      left: -1em;
+      border-right: 1em solid transparent;
+      border-bottom: 0.7em solid #00c6ff;
+      border-left: 1em solid transparent;
+      transform: rotate(-35deg);
+    }
+
+    .box ul li::after {
+      transform: rotate(35deg);
+    }
+
+    .box ul li:nth-child(1) { left: 10vw; animation-delay: 0s; }
+    .box ul li:nth-child(2) { left: 25vw; animation-delay: 2s; }
+    .box ul li:nth-child(3) { left: 40vw; animation-delay: 4s; }
+    .box ul li:nth-child(4) { left: 55vw; animation-delay: 6s; }
+    .box ul li:nth-child(5) { left: 70vw; animation-delay: 4s; }
+    .box ul li:nth-child(6) { left: 85vw; animation-delay: 8s; }
+
+    @keyframes animate {
+      0% {
+        transform: scale(0) rotate(0);
+        opacity: 1;
+        bottom: 0;
+      }
+      100% {
+        transform: scale(5) rotate(360deg);
+        opacity: 0;
+        bottom: 100vh;
+      }
+    }
+
+
+    .back-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #0056b3, #009fe3);
+}
+
+  </style>
+</head>
+<body>
+<a href="index.html" class="back-button">&#8592; Back</a>
+
+
+ 
+<h1>Explore BBD</h1>
+
+<div class="grid-container">
+
+  <div>
+    <div class="icon-box">
+      <i class="fa-solid fa-calendar-days"></i>
+      <!-- <span class="dot"></span> -->
+    </div>
+    <div class="label">BBD Events</div>
+  </div>
+
+  <div>
+    <div class="icon-box">
+      <i class="fa-solid fa-comments"></i>
+      <!-- <span class="dot"></span> -->
+    </div>
+    <div class="label">BBD Confession</div>
+  </div>
+
+  <div>
+    <div class="icon-box">
+      <i class="fa-solid fa-futbol"></i>
+      <!-- <span class="dot"></span> -->
+    </div>
+    <div class="label">BBD Sports</div>
+  </div>
+
+  <div>
+    <div class="icon-box">
+      <i class="fa-solid fa-people-group"></i>
+      <!-- <span class="dot"></span> -->
+    </div>
+    <div class="label">BBD Clubs</div>
+  </div>
+
+  <div>
+    <div class="icon-box">
+      <i class="fa-solid fa-bell"></i>
+      <!-- <span class="dot"></span> -->
+    </div>
+    <div class="label">Notice</div>
+  </div>
+
+  <div>
+    <div class="icon-box">
+      <i class="fa-solid fa-gamepad"></i>
+      <!-- <span class="dot"></span> -->
+    </div>
+    <div class="label">Games</div>
+  </div>
+
+  <div>
+    <div class="icon-box">
+      <i class="fa-solid fa-gift"></i>
+      <span class="dot"></span>
+    </div>
+    <div class="label">Rewards</div>
+  </div>
+</div>
+
+
+<div class="box">
+  <ul>
+    <li></li><li></li><li></li><li></li><li></li><li></li>
+  </ul>
+</div>
+
+</body>
+</html>

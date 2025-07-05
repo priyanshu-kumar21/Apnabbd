@@ -230,10 +230,79 @@
   
  </div>
 
+
+ <div class="break1 " style="margin-top: 20px; padding-top: 10px;">
+    <h3>REVIEWS</h3> 
+    <hr>
+    </div>
+
  <!-- Reviews Section -->
  
   
+           <div class="cards-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-text">Spreading my payments over three months is the best discount for me. It made my course affordable without any financial stress.</p>
+                    <div class="user-info">
+                        <div class="user-avatar">A</div>
+                        <div class="user-details">
+                            <div class="user-name">Amrit kumar</div>
+                            <div class="user-course">B.Tech</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-text">Pay in 3 helped me buy all my textbooks and software subscriptions while staying within my monthly budget.</p>
+                    <div class="user-info">
+                        <div class="user-avatar">A</div>
+                        <div class="user-details">
+                            <div class="user-name">Anu Sharma</div>
+                            <div class="user-course">BCA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-text">I could afford premium course materials that were previously out of my budget. The payment plan made it possible.</p>
+                    <div class="user-info">
+                        <div class="user-avatar">R</div>
+                        <div class="user-details">
+                            <div class="user-name">Rahul Verma</div>
+                            <div class="user-course">MBA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+
+             <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-text">EMIs without the hassle of bank procedures made it easy to purchase my programming courses and development tools.</p>
+                    <div class="user-info">
+                        <div class="user-avatar">P</div>
+                        <div class="user-details">
+                            <div class="user-name">Priya Singh</div>
+                            <div class="user-course">BA + LLB</div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+           </div>
 
 
 
@@ -253,7 +322,28 @@
 
 
 
-
+     <script>
+        // Add animation to cards when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = "0";
+                card.style.transform = "translateY(20px)";
+                card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+                observer.observe(card);
+            });
+        });
+    </script>
 
 
 

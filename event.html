@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BBD Events</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #e6f3fb;
+      padding: 20px;
+    }
+
+     .back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #0056b3, #009fe3);
+}
+
+     h1 {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 22px;
+      color: #6366f1;
+    }
+
+
+    .desc {
+      text-align: center;
+      font-size: 13px;
+      color: #444;
+      margin: 10px 25px 0;
+    }
+
+    .event-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      max-width: 800px;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+
+    .event-top {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      align-items: center;
+    }
+
+    .event-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .event-info {
+      flex: 1;
+    }
+
+    .event-info h2 {
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: #2c3e50;
+    }
+
+    .event-info p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    .event-details {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      font-size: 12px;
+      color: #444;
+      flex-wrap: nowrap;
+    }
+
+    .event-details div {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .event-details i {
+      color: #8b5cf6;
+      font-size: 14px;
+    }
+
+    .register-box {
+      padding: 15px 20px;
+      text-align: right;
+      border-top: 1px solid #eee;
+    }
+
+    .register-btn {
+      padding: 8px 18px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .register-btn i {
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .event-img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .event-info h2 {
+        font-size: 16px;
+      }
+
+      .event-info p {
+        font-size: 12px;
+      }
+
+      .event-details {
+        padding: 10px 15px;
+        font-size: 11.5px;
+        gap: 4px;
+      }
+
+      .register-box {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-button">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+
+  <h1 class="page-title">BBD EVENTS</h1>
+
+  <p class="desc">
+  Welcome to the BBD Events section! Here, students can explore all upcoming events in one place and register for them easily. Stay informed and don’t miss out on exciting opportunities.
+ </p>
+
+  <!-- Event Card 1 -->
+  <div class="event-card">
+    <div class="event-top">
+      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" class="event-img" alt="Event Image">
+      <div class="event-info">
+        <h2>Annual Tech Fest</h2>
+        <p>Join us for the biggest technical fest of the year with competitions, workshops, and guest lectures from industry experts.</p>
+      </div>
+    </div>
+
+    <div class="event-details">
+      <div><i class="fas fa-calendar-alt"></i>15–17 Dec</div>
+      <div><i class="fas fa-user"></i>CS Dept</div>
+      <div><i class="fas fa-map-marker-alt"></i>Auditorium</div>
+    </div>
+
+    <div class="register-box">
+      <button class="register-btn"><i class="fas fa-ticket-alt"></i> Register Now</button>
+    </div>
+  </div>
+  <div class="event-card">
+    <div class="event-top">
+      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" class="event-img" alt="Event Image">
+      <div class="event-info">
+        <h2>Annual Tech Fest</h2>
+        <p>Join us for the biggest technical fest of the year with competitions, workshops, and guest lectures from industry experts.</p>
+      </div>
+    </div>
+
+    <div class="event-details">
+      <div><i class="fas fa-calendar-alt"></i>15–17 Dec</div>
+      <div><i class="fas fa-user"></i>CS Dept</div>
+      <div><i class="fas fa-map-marker-alt"></i>Auditorium</div>
+    </div>
+
+    <div class="register-box">
+      <button class="register-btn"><i class="fas fa-ticket-alt"></i> Register Now</button>
+    </div>
+  </div>
+  <div class="event-card">
+    <div class="event-top">
+      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" class="event-img" alt="Event Image">
+      <div class="event-info">
+        <h2>Annual Tech Fest</h2>
+        <p>Join us for the biggest technical fest of the year with competitions, workshops, and guest lectures from industry experts.</p>
+      </div>
+    </div>
+
+    <div class="event-details">
+      <div><i class="fas fa-calendar-alt"></i>15–17 Dec</div>
+      <div><i class="fas fa-user"></i>CS Dept</div>
+      <div><i class="fas fa-map-marker-alt"></i>Auditorium</div>
+    </div>
+
+    <div class="register-box">
+      <button class="register-btn"><i class="fas fa-ticket-alt"></i> Register Now</button>
+    </div>
+  </div>
+  <div class="event-card">
+    <div class="event-top">
+      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" class="event-img" alt="Event Image">
+      <div class="event-info">
+        <h2>Annual Tech Fest</h2>
+        <p>Join us for the biggest technical fest of the year with competitions, workshops, and guest lectures from industry experts.</p>
+      </div>
+    </div>
+
+    <div class="event-details">
+      <div><i class="fas fa-calendar-alt"></i>15–17 Dec</div>
+      <div><i class="fas fa-user"></i>CS Dept</div>
+      <div><i class="fas fa-map-marker-alt"></i>Auditorium</div>
+    </div>
+
+    <div class="register-box">
+      <button class="register-btn"><i class="fas fa-ticket-alt"></i> Register Now</button>
+    </div>
+  </div>
+  <div class="event-card">
+    <div class="event-top">
+      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" class="event-img" alt="Event Image">
+      <div class="event-info">
+        <h2>Annual Tech Fest</h2>
+        <p>Join us for the biggest technical fest of the year with competitions, workshops, and guest lectures from industry experts.</p>
+      </div>
+    </div>
+
+    <div class="event-details">
+      <div><i class="fas fa-calendar-alt"></i>15–17 Dec</div>
+      <div><i class="fas fa-user"></i>CS Dept</div>
+      <div><i class="fas fa-map-marker-alt"></i>Auditorium</div>
+    </div>
+
+    <div class="register-box">
+      <button class="register-btn"><i class="fas fa-ticket-alt"></i> Register Now</button>
+    </div>
+  </div>
+
+  <!-- You can duplicate more cards below with different details -->
+
+</body>
+</html>

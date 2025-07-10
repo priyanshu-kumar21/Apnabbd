@@ -1,0 +1,529 @@
+<!-- Updated confession.html with Firebase Like System -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Confessions - ApnaBBD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+    }
+
+    :root {
+      --primary: #6a11cb;
+      --secondary: #2575fc;
+      --accent: #ff4d94;
+      --dark: #1a1a2e;
+      --light: #f8f9ff;
+      --gray: #e2e8f0;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --shadow: rgba(149, 157, 165, 0.1);
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa, #e4e7ff);
+      color: var(--dark);
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+    }
+
+    .back-button {
+      position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+    }
+
+    .new-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(37, 117, 252, 0.3);
+      z-index: 100;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .new-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(37, 117, 252, 0.4);
+    }
+
+    header {
+      text-align: center;
+      padding: 90px 20px 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      padding: 15px 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px var(--shadow);
+      text-align: center;
+      min-width: 150px;
+    }
+
+    .stat-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .confession-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .confession-card {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px var(--shadow);
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+    }
+
+    .confession-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+    }
+
+    .confession-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(149, 157, 165, 0.2);
+    }
+
+    .confession-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #334155;
+      margin-bottom: 30px;
+      position: relative;
+      padding-left: 15px;
+      border-left: 2px solid var(--gray);
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      border-top: 1px solid var(--gray);
+    }
+
+    .timestamp {
+      font-size: 13px;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .reactions {
+      display: flex;
+      gap: 15px;
+    }
+
+    .reaction-btn {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .reaction-btn:hover {
+      color: var(--primary);
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 20px;
+      font-size: 26px;
+      text-align: center;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .modal-content p {
+      color: #64748b;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid var(--gray);
+      resize: none;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+    }
+
+    .modal-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .modal-buttons button {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-cancel {
+      background: #f1f5f9;
+      color: #64748b;
+    }
+
+    .btn-cancel:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 4px 12px rgba(37, 117, 252, 0.3);
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(37, 117, 252, 0.4);
+    }
+
+    /* Floating decorations */
+    .floating {
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .floating:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
+      top: 10%;
+      left: 5%;
+    }
+
+    .floating:nth-child(2) {
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(135deg, rgba(255, 77, 148, 0.1), rgba(106, 17, 203, 0.1));
+      bottom: 10%;
+      right: 5%;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .confession-card {
+      animation: fadeIn 0.6s ease forwards;
+      opacity: 0;
+    }
+
+    .confession-card:nth-child(1) { animation-delay: 0.1s; }
+    .confession-card:nth-child(2) { animation-delay: 0.2s; }
+    .confession-card:nth-child(3) { animation-delay: 0.3s; }
+    .confession-card:nth-child(4) { animation-delay: 0.4s; }
+    .confession-card:nth-child(5) { animation-delay: 0.5s; }
+    .confession-card:nth-child(6) { animation-delay: 0.6s; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .confession-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+      
+      .stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      .stat-card {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 80px 15px 20px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .new-button {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+      
+      .confession-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+      }
+      
+      .confession-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+  <button class="new-button" onclick="openModal()"><i class="fas fa-plus"></i> New Confession</button>
+
+  <header>
+    <h1>Student Confessions</h1>
+    <p class="subtitle">Share your thoughts anonymously. All confessions are reviewed before publishing to maintain a positive environment.</p>
+  </header>
+
+  <div class="confession-container" id="confessionList"></div>
+
+  <!-- Modal -->
+  <div class="modal" id="confessionModal">
+    <div class="modal-content">
+      <h2>Share Your Confession</h2>
+      <p>Your identity will remain completely anonymous. All submissions are reviewed before publishing.</p>
+      <textarea id="confessionInput" placeholder="What's on your mind?"></textarea>
+      <div class="modal-buttons">
+        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn-submit" onclick="submitConfession()">Submit Confession</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase Scripts -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+    import { getFirestore, collection, getDocs, addDoc, updateDoc, doc, serverTimestamp, increment } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAxcB8ko30mfo-KCg5lespbkGUlCu4k-gw",
+      authDomain: "apnabbd-236a1.firebaseapp.com",
+      projectId: "apnabbd-236a1",
+      storageBucket: "apnabbd-236a1.appspot.com",
+      messagingSenderId: "31926689467",
+      appId: "1:31926689467:web:0f3b3b2af51b261452139e",
+      measurementId: "G-5QDLZW8ZL5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const confessionList = document.getElementById("confessionList");
+
+    async function loadConfessions() {
+      const querySnapshot = await getDocs(collection(db, "confessions"));
+      confessionList.innerHTML = "";
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        if (data.status === "approved") {
+          const card = document.createElement("div");
+          card.className = "confession-card";
+          card.innerHTML = `
+            <div class="confession-text">${data.text}</div>
+            <div class="card-footer">
+              <div class="timestamp">
+                <i class="far fa-clock"></i> ${new Date(data.timestamp?.seconds * 1000).toLocaleString()}
+              </div>
+              <div class="reactions">
+                <button class="reaction-btn" onclick="likeConfession('${docSnap.id}', this)">
+                  <i class="far fa-heart"></i> ${data.likes || 0}
+                </button>
+              </div>
+            </div>
+          `;
+          confessionList.appendChild(card);
+        }
+      });
+    }
+
+    window.likeConfession = async (id, btn) => {
+      if (localStorage.getItem(`liked-${id}`)) {
+        alert("You already liked this!");
+        return;
+      }
+      const confessionRef = doc(db, "confessions", id);
+      await updateDoc(confessionRef, {
+        likes: increment(1)
+      });
+      const current = parseInt(btn.innerText.trim()) || 0;
+      btn.innerHTML = `<i class="far fa-heart"></i> ${current + 1}`;
+      localStorage.setItem(`liked-${id}`, true);
+    };
+
+    window.openModal = () => {
+      document.getElementById("confessionModal").style.display = "flex";
+      document.getElementById("confessionInput").focus();
+    };
+
+    window.closeModal = () => {
+      document.getElementById("confessionModal").style.display = "none";
+    };
+
+    window.submitConfession = async () => {
+      const input = document.getElementById("confessionInput");
+      const text = input.value.trim();
+      if (text) {
+        await addDoc(collection(db, "confessions"), {
+          text: text,
+          status: "pending",
+          timestamp: serverTimestamp(),
+          likes: 0
+        });
+        alert("Your confession has been submitted for review!");
+        input.value = "";
+        closeModal();
+      } else {
+        alert("Please write something first.");
+      }
+    };
+
+    window.addEventListener('click', (e) => {
+      if (e.target === document.getElementById('confessionModal')) {
+        closeModal();
+      }
+    });
+
+    loadConfessions();
+  </script>
+</body>
+</html>

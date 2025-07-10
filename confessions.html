@@ -1,4 +1,4 @@
-<!-- Updated confession.html with Firebase Like System -->
+<!-- Updated confession.html with Firebase Like System, Confession Number, Top Button, and Sorting -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +7,8 @@
   <title>Student Confessions - ApnaBBD</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <style>
+    /* [Your CSS remains unchanged] */
+
     * {
       margin: 0;
       padding: 0;
@@ -404,6 +406,23 @@
         padding: 20px;
       }
     }
+
+    /* Add Scroll to Top Button Styles */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 16px;
+      display: none;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
   </style>
 </head>
 <body>
@@ -416,6 +435,8 @@
   </header>
 
   <div class="confession-container" id="confessionList"></div>
+
+  <button id="scrollTopBtn" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
 
   <!-- Modal -->
   <div class="modal" id="confessionModal">
@@ -433,7 +454,7 @@
   <!-- Firebase Scripts -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-    import { getFirestore, collection, getDocs, addDoc, updateDoc, doc, serverTimestamp, increment } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+    import { getFirestore, collection, getDocs, addDoc, updateDoc, doc, serverTimestamp, increment, query, orderBy } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyAxcB8ko30mfo-KCg5lespbkGUlCu4k-gw",
@@ -451,15 +472,20 @@
     const confessionList = document.getElementById("confessionList");
 
     async function loadConfessions() {
-      const querySnapshot = await getDocs(collection(db, "confessions"));
+      const q = query(collection(db, "confessions"), orderBy("timestamp", "desc"));
+      const querySnapshot = await getDocs(q);
       confessionList.innerHTML = "";
+      let count = 1;
       querySnapshot.forEach((docSnap) => {
         const data = docSnap.data();
         if (data.status === "approved") {
           const card = document.createElement("div");
           card.className = "confession-card";
           card.innerHTML = `
-            <div class="confession-text">${data.text}</div>
+            <div class="confession-text">
+              <strong>#${count}</strong><br/>
+              ${data.text}
+            </div>
             <div class="card-footer">
               <div class="timestamp">
                 <i class="far fa-clock"></i> ${new Date(data.timestamp?.seconds * 1000).toLocaleString()}
@@ -472,6 +498,7 @@
             </div>
           `;
           confessionList.appendChild(card);
+          count++;
         }
       });
     }
@@ -520,6 +547,19 @@
     window.addEventListener('click', (e) => {
       if (e.target === document.getElementById('confessionModal')) {
         closeModal();
+      }
+    });
+
+    window.scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('scroll', () => {
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      if (document.documentElement.scrollTop > 100 || document.body.scrollTop > 100) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
       }
     });
 

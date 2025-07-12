@@ -302,6 +302,30 @@
       padding: 20px;
       font-size: 0.9rem;
     }
+
+
+
+    .back-button {
+      position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, #f163c6, #8b5cf6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+    }
+
     
     /* ===== ANIMATIONS ===== */
     @keyframes pulse {
@@ -432,6 +456,8 @@
   </style>
 </head>
 <body>
+
+  <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
   <div class="container">
     <header>
       <h1 class="game-title">CLASSIC SNAKE GAME</h1>

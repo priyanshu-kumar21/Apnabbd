@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BBD Sports</title>
+    <title>BBD Clubs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,7 +14,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            background: linear-gradient(135deg, #1a2a6c, #2c3e50, #1a2a6c);
             min-height: 100vh;
             padding: 20px;
             color: white;
@@ -23,8 +23,8 @@
         
         .header {
             text-align: center;
-            padding: 30px 0;
-            margin-bottom: 30px;
+            padding: 40px 0 30px;
+            margin-bottom: 20px;
             position: relative;
         }
         
@@ -46,7 +46,7 @@
         
         .page-title {
             font-size: 3.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #f1c40f;
             text-shadow: 3px 3px 0 #8b6b0d;
             letter-spacing: 2px;
@@ -57,18 +57,19 @@
             max-width: 700px;
             margin: 0 auto 20px;
             color: #ecf0f1;
+            line-height: 1.6;
         }
         
-        .sports-container {
+        .clubs-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             padding: 20px;
         }
         
-        .sport-card {
+        .club-card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             overflow: hidden;
@@ -77,52 +78,53 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             cursor: pointer;
+            position: relative;
         }
         
-        .sport-card:hover {
+        .club-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
             background: rgba(255, 255, 255, 0.15);
         }
         
-        .sport-image {
-            height: 200px;
+        .club-image {
+            height: 220px;
             background-size: cover;
             background-position: center;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .sport-name {
-            padding: 20px;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #f1c40f;
-        }
-        
-        .sport-info {
-            padding: 0 20px 20px;
-            text-align: center;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .sport-icon {
-            position: absolute;
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            background: #f1c40f;
+        .club-logo {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 40px;
             color: #2c3e50;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             border: 3px solid #fff;
+            z-index: 2;
+        }
+        
+        .club-name {
+            padding: 20px 20px 10px;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #f1c40f;
+        }
+        
+        .club-info {
+            padding: 0 20px 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         
         .stats {
@@ -145,7 +147,7 @@
         }
         
         .stat-label {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #bbb;
         }
         
@@ -240,7 +242,7 @@
             border-bottom: 2px solid #4a5a8c;
         }
         
-        .sport-name-modal {
+        .club-name-modal {
             color: #2ecc71;
             font-size: 1.8rem;
             text-align: center;
@@ -279,6 +281,7 @@
             margin-top: 15px;
         }
         
+        /* Responsive Design */
         @media (max-width: 768px) {
             .page-title {
                 font-size: 2.8rem;
@@ -288,7 +291,7 @@
                 font-size: 1.1rem;
             }
             
-            .sports-container {
+            .clubs-container {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
                 gap: 20px;
             }
@@ -297,7 +300,7 @@
                 font-size: 1.8rem;
             }
             
-            .sport-name-modal {
+            .club-name-modal {
                 font-size: 1.5rem;
             }
         }
@@ -315,7 +318,7 @@
                 left: 15px;
             }
             
-            .sport-card {
+            .club-card {
                 margin-bottom: 10px;
             }
             
@@ -331,184 +334,95 @@
 </head>
 <body>
     <div class="logo">
-        <i class="fas fa-running"></i>
+        <i class="fas fa-users"></i>
     </div>
     
     <div class="header">
-        <h1 class="page-title">BBD SPORTS</h1>
-        <p class="page-subtitle">Explore the wide range of sports activities and competitions across all BBD institutions</p>
+        <h1 class="page-title">BBD CLUBS</h1>
+        <p class="page-subtitle">Discover the diverse range of student clubs and organizations across all BBD institutions</p>
+        <p class="page-subtitle">Join a community, develop skills, and make lifelong connections</p>
     </div>
     
-    <div class="sports-container">
-        <!-- Cricket -->
-        <div class="sport-card" onclick="openNotice('Cricket')">
-            <div class="sport-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
-                <div class="sport-icon">
-                    <i class="fas fa-baseball-ball"></i>
+    <div class="clubs-container">
+        <!-- Team Aaina -->
+        <div class="club-card" onclick="openNotice('Team Aaina')">
+            <div class="club-image" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
+                <div class="club-logo">
+                    <i class="fas fa-theater-masks"></i>
                 </div>
             </div>
-            <h2 class="sport-name">Cricket</h2>
-            <p class="sport-info">The most popular sport in our institutions with multiple teams competing at national level tournaments.</p>
+            <h2 class="club-name">Team Aaina</h2>
+            <p class="club-info">The premier drama club of BBD, known for award-winning theatrical productions and performances.</p>
             <div class="stats">
                 <div class="stat-item">
-                    <div class="stat-value">8</div>
-                    <div class="stat-label">Teams</div>
+                    <div class="stat-value">45</div>
+                    <div class="stat-label">Members</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">3</div>
-                    <div class="stat-label">Trophies</div>
-                </div>
+                
             </div>
         </div>
         
-        <!-- Football -->
-        <div class="sport-card" onclick="openNotice('Football')">
-            <div class="sport-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
-                <div class="sport-icon">
-                    <i class="fas fa-futbol"></i>
+        <!-- Udaan -->
+        <div class="club-card" onclick="openNotice('Udaan')">
+            <div class="club-image" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517436073-3b1b1b1b1b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
+                <div class="club-logo">
+                    <i class="fas fa-plane"></i>
                 </div>
             </div>
-            <h2 class="sport-name">Football</h2>
-            <p class="sport-info">Our football teams compete in regional and national championships with excellent facilities.</p>
+            <h2 class="club-name">Udaan</h2>
+            <p class="club-info">The aviation and aeronautics club inspiring future aerospace engineers and aviation enthusiasts.</p>
             <div class="stats">
                 <div class="stat-item">
-                    <div class="stat-value">12</div>
-                    <div class="stat-label">Teams</div>
+                    <div class="stat-value">68</div>
+                    <div class="stat-label">Members</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">5</div>
-                    <div class="stat-label">Trophies</div>
-                </div>
+                
             </div>
         </div>
         
-        <!-- Basketball -->
-        <div class="sport-card" onclick="openNotice('Basketball')">
-            <div class="sport-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
-                <div class="sport-icon">
-                    <i class="fas fa-basketball-ball"></i>
+        <!-- NSS -->
+        <div class="club-card" onclick="openNotice('NSS')">
+            <div class="club-image" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522881193457-37ae97c905bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
+                <div class="club-logo">
+                    <i class="fas fa-hands-helping"></i>
                 </div>
             </div>
-            <h2 class="sport-name">Basketball</h2>
-            <p class="sport-info">Fast-paced and exciting, our basketball teams are known for their competitive spirit.</p>
+            <h2 class="club-name">NSS</h2>
+            <p class="club-info">National Service Scheme - dedicated to community service and social welfare activities.</p>
             <div class="stats">
                 <div class="stat-item">
-                    <div class="stat-value">6</div>
-                    <div class="stat-label">Teams</div>
+                    <div class="stat-value">120+</div>
+                    <div class="stat-label">Members</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">2</div>
-                    <div class="stat-label">Trophies</div>
-                </div>
+               
             </div>
         </div>
         
-        <!-- Badminton -->
-        <div class="sport-card" onclick="openNotice('Badminton')">
-            <div class="sport-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
-                <div class="sport-icon">
-                    <i class="fas fa-table-tennis"></i>
+        <!-- CodeCrafters -->
+        <div class="club-card" onclick="openNotice('CodeCrafters')">
+            <div class="club-image" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
+                <div class="club-logo">
+                    <i class="fas fa-laptop-code"></i>
                 </div>
             </div>
-            <h2 class="sport-name">Badminton</h2>
-            <p class="sport-info">Our badminton players have won several inter-university championships in singles and doubles.</p>
+            <h2 class="club-name">NSS</h2>
+            <p class="club-info">The coding club for tech enthusiasts, organizing hackathons, workshops, and coding competitions.</p>
             <div class="stats">
                 <div class="stat-item">
-                    <div class="stat-value">15+</div>
-                    <div class="stat-label">Players</div>
+                    <div class="stat-value">92</div>
+                    <div class="stat-label">Members</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">7</div>
-                    <div class="stat-label">Medals</div>
-                </div>
+                
             </div>
         </div>
         
-        <!-- Table Tennis -->
-        <div class="sport-card" onclick="openNotice('Table Tennis')">
-            <div class="sport-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1611543538693-06d7d4da1f8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
-                <div class="sport-icon">
-                    <i class="fas fa-table-tennis"></i>
-                </div>
-            </div>
-            <h2 class="sport-name">Table Tennis</h2>
-            <p class="sport-info">A popular indoor sport with dedicated practice facilities across all campuses.</p>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-value">20+</div>
-                    <div class="stat-label">Players</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">4</div>
-                    <div class="stat-label">Trophies</div>
-                </div>
-            </div>
-        </div>
         
-        <!-- Athletics -->
-        <div class="sport-card" onclick="openNotice('Athletics')">
-            <div class="sport-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
-                <div class="sport-icon">
-                    <i class="fas fa-running"></i>
-                </div>
-            </div>
-            <h2 class="sport-name">Athletics</h2>
-            <p class="sport-info">Track and field events with athletes competing in regional and national competitions.</p>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-value">50+</div>
-                    <div class="stat-label">Athletes</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">25</div>
-                    <div class="stat-label">Medals</div>
-                </div>
-            </div>
-        </div>
+       
         
-        <!-- Volleyball -->
-        <div class="sport-card" onclick="openNotice('Volleyball')">
-            <div class="sport-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1592656094267-764a45160876?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
-                <div class="sport-icon">
-                    <i class="fas fa-volleyball-ball"></i>
-                </div>
-            </div>
-            <h2 class="sport-name">Volleyball</h2>
-            <p class="sport-info">Both indoor and beach volleyball teams with dedicated coaches and training programs.</p>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-value">5</div>
-                    <div class="stat-label">Teams</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">3</div>
-                    <div class="stat-label">Trophies</div>
-                </div>
-            </div>
-        </div>
         
-        <!-- Chess -->
-        <div class="sport-card" onclick="openNotice('Chess')">
-            <div class="sport-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1586165368502-1bad197a6461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');">
-                <div class="sport-icon">
-                    <i class="fas fa-chess"></i>
-                </div>
-            </div>
-            <h2 class="sport-name">Chess</h2>
-            <p class="sport-info">Our chess club has produced several state and national level players with regular tournaments.</p>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-value">40+</div>
-                    <div class="stat-label">Players</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">12</div>
-                    <div class="stat-label">Trophies</div>
-                </div>
-            </div>
-        </div>
+       
     </div>
-    
+
     <div class="footer">
         <a href="explore.html" class="back-button">
             <i class="fas fa-arrow-left"></i> Back to Main
@@ -516,12 +430,14 @@
         
     </div>
     
+    
+    
     <!-- Notice Modal -->
     <div id="noticeModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 class="modal-title">SPORTS NOTICE</h2>
-            <h3 class="sport-name-modal" id="sportName">Sport Name</h3>
+            <h2 class="modal-title">CLUB NOTICE</h2>
+            <h3 class="club-name-modal" id="clubName">Club Name</h3>
             
             <div class="notice-container">
                 <div class="notice-icon">
@@ -532,15 +448,15 @@
             </div>
             
             <p style="text-align: center; color: #bbb; margin-top: 20px; font-size: 0.9rem;">
-                Check back later for updates on schedules, events, and important announcements.
+                Check back later for updates on meetings, events, and important announcements.
             </p>
         </div>
     </div>
     
     <script>
         // Function to open the notice modal
-        function openNotice(sportName) {
-            document.getElementById('sportName').textContent = sportName;
+        function openNotice(clubName) {
+            document.getElementById('clubName').textContent = clubName;
             document.getElementById('noticeModal').style.display = 'flex';
             
             // Set current date/time for the notice

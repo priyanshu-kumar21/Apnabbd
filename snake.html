@@ -26,9 +26,14 @@
       overflow-x: hidden;
     }
     
-    .game-container {
+    .container-wrapper {
       width: 100%;
       max-width: 500px;
+      padding: 10px;
+    }
+    
+    .game-container {
+      width: 100%;
       background-color: #0c162d;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -40,7 +45,7 @@
     /* Header Styles */
     .game-header {
       background: linear-gradient(to right, #2c3e50, #4a5a8c);
-      padding: 20px;
+      padding: 15px 20px;
       text-align: center;
       border-bottom: 3px solid #6b7ba6;
       position: relative;
@@ -48,17 +53,17 @@
     
     .game-title {
       color: #f1c40f;
-      font-size: 2.5rem;
+      font-size: 2rem;
       text-shadow: 3px 3px 0 #8b6b0d;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       margin-bottom: 5px;
       font-weight: bold;
     }
     
     .game-subtitle {
       color: #ecf0f1;
-      font-size: 1.1rem;
-      margin-bottom: 15px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
     }
     
     /* Stats Container */
@@ -66,7 +71,7 @@
       display: flex;
       justify-content: center;
       background-color: #152347;
-      padding: 15px;
+      padding: 10px 15px;
       border-bottom: 3px solid #6b7ba6;
     }
     
@@ -78,42 +83,47 @@
     
     .stat-label {
       color: #7f8c8d;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       margin-bottom: 5px;
     }
     
     .stat-value {
       color: #f1c40f;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
     }
     
     /* Game Board */
+    .game-board-container {
+      padding: 10px;
+      background-color: #1c2e4a;
+    }
+    
     .game-board {
       display: grid;
       grid-template-columns: repeat(20, 1fr);
       grid-template-rows: repeat(20, 1fr);
       gap: 1px;
       background-color: #1c2e4a;
-      padding: 15px;
       aspect-ratio: 1/1;
+      max-height: 65vh;
     }
     
     .cell {
       background-color: #23395d;
-      border-radius: 3px;
+      border-radius: 2px;
     }
     
     .snake {
       background-color: #27ae60;
       border: 1px solid #2ecc71;
-      border-radius: 4px;
+      border-radius: 3px;
       z-index: 2;
     }
     
     .snake-head {
       background-color: #2ecc71;
-      border-radius: 5px;
+      border-radius: 4px;
       position: relative;
     }
     
@@ -139,7 +149,7 @@
     .controls {
       display: flex;
       justify-content: center;
-      padding: 20px;
+      padding: 15px;
       background: linear-gradient(to right, #2c3e50, #4a5a8c);
       gap: 15px;
     }
@@ -148,14 +158,14 @@
       background: linear-gradient(to bottom, #f1c40f, #f39c12);
       color: #2c3e50;
       border: none;
-      padding: 12px 25px;
-      font-size: 1.2rem;
+      padding: 10px 20px;
+      font-size: 1rem;
       font-weight: bold;
       border-radius: 50px;
       cursor: pointer;
       box-shadow: 0 4px 0 #d35400;
       transition: all 0.2s;
-      min-width: 180px;
+      min-width: 120px;
     }
     
     .btn:active {
@@ -172,9 +182,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      padding: 15px;
       background: linear-gradient(to right, #2c3e50, #4a5a8c);
-      gap: 15px;
+      gap: 10px;
       border-top: 3px solid #6b7ba6;
     }
     
@@ -184,8 +194,8 @@
     }
     
     .direction-btn {
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       background: linear-gradient(to bottom, #3498db, #2980b9);
       border: none;
       border-radius: 50%;
@@ -193,7 +203,7 @@
       justify-content: center;
       align-items: center;
       margin: 5px;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: white;
       box-shadow: 0 4px 0 #1c5a87;
       cursor: pointer;
@@ -224,30 +234,30 @@
     
     .game-over h2 {
       color: #e74c3c;
-      font-size: 3rem;
-      margin-bottom: 20px;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
       text-shadow: 0 0 10px rgba(231, 76, 60, 0.7);
     }
     
     .final-score {
       color: #f1c40f;
-      font-size: 2rem;
-      margin-bottom: 30px;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
     }
     
     .back-btn {
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 15px;
+      left: 15px;
       color: #ecf0f1;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 5px;
       z-index: 11;
       background: rgba(0, 0, 0, 0.5);
-      padding: 8px 15px;
+      padding: 6px 12px;
       border-radius: 30px;
       transition: all 0.3s;
     }
@@ -272,10 +282,10 @@
     
     .modal-content {
       background: linear-gradient(135deg, #1c2e4a, #152347);
-      padding: 30px;
+      padding: 25px;
       border-radius: 15px;
       max-width: 400px;
-      width: 100%;
+      width: 90%;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       border: 3px solid #4a5a8c;
@@ -283,59 +293,60 @@
     
     .modal-title {
       color: #f1c40f;
-      font-size: 2rem;
-      margin-bottom: 20px;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
     }
     
     .modal-subtitle {
       color: #ecf0f1;
-      margin-bottom: 25px;
-      font-size: 1.1rem;
+      margin-bottom: 20px;
+      font-size: 1rem;
     }
     
     .input-group {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       text-align: left;
     }
     
     .input-group label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       color: #7f8c8d;
+      font-size: 0.9rem;
     }
     
     .input-group input, .input-group select {
       width: 100%;
-      padding: 12px 15px;
+      padding: 10px 12px;
       border-radius: 8px;
       border: 2px solid #4a5a8c;
       background: rgba(12, 22, 45, 0.8);
       color: #ecf0f1;
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
     
     .input-group select {
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ecf0f1'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 15px center;
-      background-size: 15px;
+      background-position: right 12px center;
+      background-size: 12px;
     }
     
     .modal-buttons {
       display: flex;
-      gap: 15px;
-      margin-top: 20px;
+      gap: 12px;
+      margin-top: 15px;
     }
     
     .modal-btn {
       flex: 1;
-      padding: 12px;
+      padding: 10px;
       border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
       border: none;
-      font-size: 1rem;
+      font-size: 0.9rem;
       transition: all 0.3s;
     }
     
@@ -358,49 +369,7 @@
     /* Responsive Design */
     @media (max-width: 768px) {
       .game-title {
-        font-size: 2rem;
-      }
-      
-      .stat-value {
-        font-size: 2rem;
-      }
-      
-      .btn {
-        padding: 10px 20px;
-        min-width: 150px;
-        font-size: 1.1rem;
-      }
-      
-      .game-over h2 {
-        font-size: 2.5rem;
-      }
-      
-      .final-score {
         font-size: 1.8rem;
-      }
-      
-      .direction-btn {
-        width: 60px;
-        height: 60px;
-        font-size: 1.3rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .game-title {
-        font-size: 1.8rem;
-      }
-      
-      .game-subtitle {
-        font-size: 1rem;
-      }
-      
-      .stats-container {
-        padding: 10px;
-      }
-      
-      .stat-label {
-        font-size: 0.8rem;
       }
       
       .stat-value {
@@ -409,29 +378,16 @@
       
       .btn {
         padding: 8px 15px;
-        min-width: 140px;
-        font-size: 1rem;
+        min-width: 100px;
+        font-size: 0.95rem;
       }
       
       .game-over h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       
       .final-score {
-        font-size: 1.5rem;
-      }
-      
-      .back-btn {
-        font-size: 0.9rem;
-        padding: 6px 12px;
-      }
-      
-      .modal-title {
-        font-size: 1.7rem;
-      }
-      
-      .modal-subtitle {
-        font-size: 1rem;
+        font-size: 1.6rem;
       }
       
       .direction-btn {
@@ -440,46 +396,131 @@
         font-size: 1.2rem;
       }
     }
+    
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+      
+      .game-title {
+        font-size: 1.6rem;
+      }
+      
+      .game-subtitle {
+        font-size: 0.8rem;
+      }
+      
+      .stat-value {
+        font-size: 1.6rem;
+      }
+      
+      .btn {
+        padding: 7px 12px;
+        min-width: 90px;
+        font-size: 0.9rem;
+      }
+      
+      .game-over h2 {
+        font-size: 1.8rem;
+      }
+      
+      .final-score {
+        font-size: 1.4rem;
+      }
+      
+      .back-btn {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+      }
+      
+      .modal-title {
+        font-size: 1.5rem;
+      }
+      
+      .modal-subtitle {
+        font-size: 0.9rem;
+      }
+      
+      .direction-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+      }
+    }
+    
+    @media (max-height: 700px) {
+      .game-board {
+        max-height: 55vh;
+      }
+      
+      .game-title {
+        font-size: 1.6rem;
+      }
+      
+      .stat-value {
+        font-size: 1.6rem;
+      }
+    }
+    
+    @media (max-height: 600px) {
+      .game-board {
+        max-height: 50vh;
+      }
+      
+      .game-title {
+        font-size: 1.4rem;
+      }
+      
+      .stat-value {
+        font-size: 1.4rem;
+      }
+    }
   </style>
 </head>
 <body>
-  
+  <div class="back-btn" onclick="window.location.href='index.html'">
+    <i class="fas fa-arrow-left"></i> Back to Main
+  </div>
 
-  <div class="game-container">
-    <div class="game-header">
-      <h1 class="game-title">SNAKE GAME</h1>
-      <p class="game-subtitle">Classic Nokia Experience</p>
-    </div>
-    
-    <div class="stats-container">
-      <div class="stat-box">
-        <div class="stat-label">SCORE</div>
-        <div class="stat-value" id="score">0</div>
+  <div class="container-wrapper">
+    <div class="game-container">
+      <div class="game-header">
+        <h1 class="game-title">SNAKE GAME</h1>
+        <p class="game-subtitle">Classic Nokia Experience</p>
       </div>
-    </div>
-    
-    <div class="game-board" id="game-board"></div>
-    
-    <div class="controls">
-      <button class="btn" id="pause-btn">PAUSE</button>
-    </div>
-    
-    <!-- Mobile Controls -->
-    <div class="mobile-controls">
-      <div class="directional-row">
-        <button class="direction-btn" id="up-btn"><i class="fas fa-arrow-up"></i></button>
+      
+      <div class="stats-container">
+        <div class="stat-box">
+          <div class="stat-label">SCORE</div>
+          <div class="stat-value" id="score">0</div>
+        </div>
       </div>
-      <div class="directional-row">
-        <button class="direction-btn" id="left-btn"><i class="fas fa-arrow-left"></i></button>
-        <button class="direction-btn" id="down-btn"><i class="fas fa-arrow-down"></i></button>
-        <button class="direction-btn" id="right-btn"><i class="fas fa-arrow-right"></i></button>
+      
+      <div class="game-board-container">
+        <div class="game-board" id="game-board"></div>
       </div>
-    </div>
-    
-    <div class="game-over" id="game-over">
-      <h2>GAME OVER</h2>
-      <div class="final-score">Score: <span id="final-score">0</span></div>
-      <button class="btn" id="restart-btn">PLAY AGAIN</button>
+      
+      <div class="controls">
+        <button class="btn" id="pause-btn">PAUSE</button>
+      </div>
+      
+      <!-- Mobile Controls -->
+      <div class="mobile-controls">
+        <div class="directional-row">
+          <button class="direction-btn" id="up-btn"><i class="fas fa-arrow-up"></i></button>
+        </div>
+        <div class="directional-row">
+          <button class="direction-btn" id="left-btn"><i class="fas fa-arrow-left"></i></button>
+          <button class="direction-btn" id="down-btn"><i class="fas fa-arrow-down"></i></button>
+          <button class="direction-btn" id="right-btn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+      
+      <div class="game-over" id="game-over">
+        <h2>GAME OVER</h2>
+        <div class="final-score">Score: <span id="final-score">0</span></div>
+        <button class="btn" id="restart-btn">PLAY AGAIN</button>
+      </div>
     </div>
   </div>
 
@@ -547,8 +588,7 @@
     let direction = 'right';
     let nextDirection = 'right';
     let score = 0;
-    let level = 1;
-    let speed = 100;
+    let speed = 150; // Slower initial speed
     let gameInterval;
     let isPaused = false;
     let isGameOver = false;
@@ -702,7 +742,7 @@
       direction = 'right';
       nextDirection = 'right';
       score = 0;
-      speed = 100;
+      speed = 150; // Keep slower speed
       scoreElement.textContent = score;
       generateFood();
       draw();
@@ -759,6 +799,15 @@
     initBoard();
     startGame();
     setupMobileControls();
+    
+    // Prevent scrolling on mobile devices
+    document.addEventListener('touchmove', function(e) {
+      if(e.target.classList.contains('direction-btn') || 
+         e.target.closest('.game-board-container') ||
+         e.target.closest('.controls')) {
+        e.preventDefault();
+      }
+    }, { passive: false });
   </script>
 </body>
 </html>

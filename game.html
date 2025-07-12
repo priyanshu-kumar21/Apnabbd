@@ -582,13 +582,15 @@
         const li = document.createElement('li');
         li.className = 'score-item';
         li.innerHTML = `
-          <div class="score-rank">${index + 1}.</div>
-          <div class="score-player">
-            ${data.name || 'Anonymous'}
-            <span class="score-college">${data.college || 'Unknown College'}</span>
-          </div>
-          <div class="score-value">${data.score}</div>
-        `;
+  <div class="score-rank">${index + 1}.</div>
+  <div class="score-player">
+    ${data.name || 'Anonymous'}
+    <span class="score-college">${data.college || 'Unknown College'}</span>
+    <span class="score-section">${data.section || ''}</span>
+  </div>
+  <div class="score-value">${data.score}</div>
+`;
+
         scoreList.appendChild(li);
       });
     }

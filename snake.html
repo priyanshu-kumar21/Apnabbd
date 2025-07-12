@@ -461,7 +461,7 @@
     <div class="game-board" id="game-board"></div>
     
     <div class="controls">
-      <button class="btn" id="start-btn">START</button>
+      <button class="btn" id="pause-btn">PAUSE</button>
     </div>
     
     <!-- Mobile Controls -->
@@ -557,7 +557,7 @@
     // DOM Elements
     const gameBoard = document.getElementById('game-board');
     const scoreElement = document.getElementById('score');
-    const startBtn = document.getElementById('start-btn');
+    const pauseBtn = document.getElementById('pause-btn');
     const gameOverScreen = document.getElementById('game-over');
     const finalScoreElement = document.getElementById('final-score');
     const restartBtn = document.getElementById('restart-btn');
@@ -710,7 +710,15 @@
       isGameOver = false;
       gameOverScreen.style.display = 'none';
       scoreModal.style.display = 'none';
+      pauseBtn.textContent = 'PAUSE';
       gameInterval = setInterval(moveSnake, speed);
+    }
+
+    // Pause/resume game
+    function pauseGame() {
+      if (isGameOver) return;
+      isPaused = !isPaused;
+      pauseBtn.textContent = isPaused ? 'RESUME' : 'PAUSE';
     }
 
     // Handle keyboard input
@@ -743,13 +751,13 @@
     }
 
     // Event Listeners
-    startBtn.addEventListener('click', startGame);
+    pauseBtn.addEventListener('click', pauseGame);
     restartBtn.addEventListener('click', startGame);
     document.addEventListener('keydown', handleKeyPress);
 
     // Initialize game
     initBoard();
-    draw();
+    startGame();
     setupMobileControls();
   </script>
 </body>

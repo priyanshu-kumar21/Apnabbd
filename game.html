@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classic Snake Game</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    /* ===== RESET & BASE STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    /* ===== HEADER SECTION ===== */
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .game-title {
+      color: #f1c40f;
+      font-size: 4rem;
+      text-shadow: 3px 3px 0 #8b6b0d;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      line-height: 1.1;
+    }
+    
+    .game-subtitle {
+      color: #ecf0f1;
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* ===== MAIN CONTENT SECTION ===== */
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    
+    /* Game Preview */
+    .game-preview-container {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .game-preview {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, #23395d, #1c2e4a);
+      position: relative;
+      overflow: hidden;
+      filter: blur(4px);
+      opacity: 0.85;
+    }
+    
+    .preview-snake {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #27ae60;
+      border-radius: 4px;
+    }
+    
+    .preview-head {
+      background-color: #2ecc71;
+      border-radius: 5px;
+    }
+    
+    .preview-food {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #e74c3c;
+      border-radius: 50%;
+      animation: pulse 1s infinite alternate;
+    }
+    
+    .play-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 10;
+    }
+    
+    .play-btn {
+      background: linear-gradient(to bottom, #f1c40f, #f39c12);
+      color: #2c3e50;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 0 #d35400;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .play-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 0 #d35400;
+    }
+    
+    .play-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #d35400;
+    }
+    
+    /* High Scores */
+    .high-scores {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      background: rgba(12, 22, 45, 0.8);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 3px solid #4a5a8c;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .section-title {
+      color: #f1c40f;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: #f1c40f;
+    }
+    
+    .score-container {
+      flex-grow: 1;
+      overflow-y: auto;
+      max-height: 320px;
+      padding-right: 10px;
+    }
+    
+    .score-list {
+      list-style: none;
+    }
+    
+    .score-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 15px;
+      background: rgba(21, 35, 71, 0.5);
+      margin-bottom: 10px;
+      border-radius: 8px;
+      color: #ecf0f1;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+    }
+    
+    .score-item:hover {
+      background: rgba(21, 35, 71, 0.8);
+      transform: translateX(5px);
+    }
+    
+    .score-rank {
+      font-weight: bold;
+      color: #f1c40f;
+      min-width: 30px;
+    }
+    
+    .score-player {
+      flex-grow: 1;
+      text-align: left;
+      padding: 0 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .score-college {
+      color: #3498db;
+      font-style: italic;
+      font-size: 0.9rem;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .score-value {
+      font-weight: bold;
+      color: #f1c40f;
+      min-width: 60px;
+      text-align: right;
+    }
+    
+    .loading-scores {
+      text-align: center;
+      color: #ecf0f1;
+      padding: 20px;
+      font-style: italic;
+    }
+    
+    /* Game Description */
+    .game-description {
+      background: rgba(12, 22, 45, 0.8);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 3px solid #4a5a8c;
+      margin-top: 20px;
+    }
+    
+    .description-content {
+      color: #ecf0f1;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    
+    .description-content p {
+      margin-bottom: 15px;
+    }
+    
+    .highlight {
+      color: #f1c40f;
+      font-weight: bold;
+    }
+    
+    .controls-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .control-item {
+      background: rgba(21, 35, 71, 0.5);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .control-key {
+      display: inline-block;
+      background: #f1c40f;
+      color: #2c3e50;
+      padding: 5px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin: 0 5px;
+    }
+    
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+    
+    /* ===== ANIMATIONS ===== */
+    @keyframes pulse {
+      from { transform: scale(0.8); }
+      to { transform: scale(1.1); }
+    }
+    
+    @keyframes snakeMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(20px); }
+    }
+    
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 992px) {
+      .game-title {
+        font-size: 3.5rem;
+      }
+      
+      .game-subtitle {
+        font-size: 1.3rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .game-title {
+        font-size: 3rem;
+      }
+      
+      .game-preview {
+        height: 350px;
+      }
+      
+      .content {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .controls-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .game-title {
+        font-size: 2.5rem;
+      }
+      
+      .game-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .play-btn {
+        padding: 12px 30px;
+        font-size: 1.3rem;
+      }
+      
+      .section-title {
+        font-size: 1.6rem;
+      }
+      
+      .game-preview {
+        height: 300px;
+      }
+      
+      .score-item {
+        font-size: 1rem;
+        flex-direction: column;
+        gap: 5px;
+      }
+      
+      .score-player {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .score-value {
+        text-align: center;
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .game-title {
+        font-size: 2rem;
+        text-shadow: 2px 2px 0 #8b6b0d;
+      }
+      
+      .game-preview {
+        height: 250px;
+      }
+      
+      .play-btn {
+        padding: 10px 25px;
+        font-size: 1.1rem;
+      }
+      
+      .high-scores, .game-description {
+        padding: 20px;
+      }
+      
+      .section-title {
+        font-size: 1.4rem;
+      }
+      
+      .description-content {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .game-title {
+        font-size: 1.8rem;
+      }
+      
+      .game-subtitle {
+        font-size: 1rem;
+      }
+      
+      .play-btn {
+        padding: 8px 20px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="game-title">CLASSIC SNAKE GAME</h1>
+      <p class="game-subtitle">Relive the nostalgia of the iconic Nokia mobile game</p>
+    </header>
+
+    <div class="content">
+      <div class="game-preview-container">
+        <div class="game-preview" id="game-preview"></div>
+        <div class="play-overlay">
+          <button class="play-btn" onclick="window.location.href='snake.html'">
+            <i class="fas fa-play"></i> PLAY NOW
+          </button>
+        </div>
+      </div>
+
+      <div class="high-scores">
+        <h2 class="section-title">TOP SCORES</h2>
+        <div class="score-container">
+          <ul class="score-list" id="score-list">
+            <li class="loading-scores">
+              <i class="fas fa-spinner fa-spin"></i> Loading scores...
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-description">
+      <h2 class="section-title">HOW TO PLAY</h2>
+      <div class="description-content">
+        <p>Welcome to the <span class="highlight">Classic Snake Game</span>, a faithful recreation of the iconic game that came pre-installed on Nokia mobile phones in the late 1990s and early 2000s.</p>
+                
+        <p>The objective is simple: <span class="highlight">control the snake</span> to eat as much food as possible without colliding with walls or your own tail. Each piece of food makes your snake grow longer, increasing the challenge.</p>
+                
+        <div class="controls-list">
+          <div class="control-item">
+            <p>Move <span class="highlight">UP</span></p>
+            <div><span class="control-key">↑</span> or <span class="control-key">W</span></div>
+          </div>
+          <div class="control-item">
+            <p>Move <span class="highlight">DOWN</span></p>
+            <div><span class="control-key">↓</span> or <span class="control-key">S</span></div>
+          </div>
+          <div class="control-item">
+            <p>Move <span class="highlight">LEFT</span></p>
+            <div><span class="control-key">←</span> or <span class="control-key">A</span></div>
+          </div>
+          <div class="control-item">
+            <p>Move <span class="highlight">RIGHT</span></p>
+            <div><span class="control-key">→</span> or <span class="control-key">D</span></div>
+          </div>
+        </div>
+                
+        <p><span class="highlight">Scoring:</span> Each food item gives you <span class="highlight">10 points</span>. The game gets progressively faster as your score increases. See if you can make it to the top of the leaderboard!</p>
+                
+        <p>This version stays true to the original with retro styling and authentic gameplay while adding modern features like persistent high scores and responsive design.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2023 Classic Snake Game | Relive the nostalgia of Nokia mobile gaming</p>
+    </footer>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore-compat.js"></script>
+
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAxcB8ko30mfo-KCg5lespbkGUlCu4k-gw",
+      authDomain: "apnabbd-236a1.firebaseapp.com",
+      projectId: "apnabbd-236a1",
+      storageBucket: "apnabbd-236a1.firebasestorage.app",
+      messagingSenderId: "31926689467",
+      appId: "1:31926689467:web:0f3b3b2af51b261452139e",
+      measurementId: "G-5QDLZW8ZL5"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    function createPreview() {
+      const preview = document.getElementById('game-preview');
+      preview.innerHTML = '';
+      
+      // Create snake body
+      for (let i = 0; i < 8; i++) {
+        const segment = document.createElement('div');
+        segment.className = 'preview-snake';
+        segment.style.left = `${200 - i * 25}px`;
+        segment.style.top = '200px';
+        if (i === 0) segment.classList.add('preview-head');
+        preview.appendChild(segment);
+      }
+
+      // Create food items
+      for (let i = 0; i < 3; i++) {
+        const food = document.createElement('div');
+        food.className = 'preview-food';
+        food.style.left = `${150 + i * 80}px`;
+        food.style.top = `${120 + i * 40}px`;
+        preview.appendChild(food);
+      }
+    }
+
+    function displayHighScores(scores) {
+      const scoreList = document.getElementById('score-list');
+      
+      if (scores.length === 0) {
+        scoreList.innerHTML = '<li class="loading-scores">No scores yet. Be the first!</li>';
+        return;
+      }
+      
+      scoreList.innerHTML = '';
+      
+      scores.forEach((doc, index) => {
+        const data = doc.data();
+        const li = document.createElement('li');
+        li.className = 'score-item';
+        li.innerHTML = `
+          <div class="score-rank">${index + 1}.</div>
+          <div class="score-player">
+            ${data.name || 'Anonymous'}
+            <span class="score-college">${data.college || 'Unknown College'}</span>
+          </div>
+          <div class="score-value">${data.score}</div>
+        `;
+        scoreList.appendChild(li);
+      });
+    }
+
+    function fetchScores() {
+      db.collection('snakeScores')
+        .orderBy('score', 'desc')
+        .limit(10)
+        .get()
+        .then((querySnapshot) => {
+          displayHighScores(querySnapshot.docs);
+        })
+        .catch((error) => {
+          console.error("Error fetching scores:", error);
+          document.getElementById('score-list').innerHTML = `
+            <li class="loading-scores">
+              <i class="fas fa-exclamation-triangle"></i> Error loading scores
+            </li>
+          `;
+        });
+    }
+
+    function init() {
+      createPreview();
+      fetchScores();
+      
+      // Add animation to Play button
+      const playBtn = document.querySelector('.play-btn');
+      playBtn.addEventListener('mouseenter', () => {
+        playBtn.style.transform = 'translateY(-3px)';
+        playBtn.style.boxShadow = '0 8px 0 #d35400';
+      });
+      
+      playBtn.addEventListener('mouseleave', () => {
+        playBtn.style.transform = 'translateY(0)';
+        playBtn.style.boxShadow = '0 6px 0 #d35400';
+      });
+    }
+
+    // Initialize when page loads
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

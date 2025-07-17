@@ -76,6 +76,12 @@
       border-radius: 12px;
       object-fit: cover;
       flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .event-img:hover {
+      transform: scale(1.05);
     }
 
     .event-info {
@@ -139,6 +145,51 @@
       font-size: 13px;
     }
 
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .modal-content {
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+      margin: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 8px;
+    }
+    
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .close:hover {
+      color: #bbb;
+    }
+    
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
     @media (max-width: 600px) {
       .event-img {
         width: 80px;
@@ -162,6 +213,10 @@
       .register-box {
         text-align: center;
       }
+      
+      .modal-content {
+        max-width: 95%;
+      }
     }
   </style>
 </head>
@@ -180,7 +235,10 @@
   <!-- Event Card 1 -->
   <div class="event-card">
     <div class="event-top">
-      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" class="event-img" alt="Event Image">
+      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" 
+           class="event-img" 
+           alt="Tech Fest"
+           onclick="openModal(this)">
       <div class="event-info">
         <h2>Annual Tech Fest</h2>
         <p>Join us for the biggest technical fest of the year with competitions, workshops, and guest lectures from industry experts.</p>
@@ -197,76 +255,96 @@
       <button class="register-btn"><i class="fas fa-ticket-alt"></i> Register Now</button>
     </div>
   </div>
+  
+  <!-- Event Card 2 -->
   <div class="event-card">
     <div class="event-top">
-      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" class="event-img" alt="Event Image">
+      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80" 
+           class="event-img" 
+           alt="Cultural Fest"
+           onclick="openModal(this)">
       <div class="event-info">
-        <h2>Annual Tech Fest</h2>
-        <p>Join us for the biggest technical fest of the year with competitions, workshops, and guest lectures from industry experts.</p>
+        <h2>Cultural Festival</h2>
+        <p>Experience the vibrant diversity of our college with music, dance, drama, and art exhibitions from different regions.</p>
       </div>
     </div>
 
     <div class="event-details">
-      <div><i class="fas fa-calendar-alt"></i>15–17 Dec</div>
-      <div><i class="fas fa-user"></i>CS Dept</div>
-      <div><i class="fas fa-map-marker-alt"></i>Auditorium</div>
+      <div><i class="fas fa-calendar-alt"></i>22–24 Jan</div>
+      <div><i class="fas fa-user"></i>Cultural Club</div>
+      <div><i class="fas fa-map-marker-alt"></i>College Ground</div>
     </div>
 
     <div class="register-box">
       <button class="register-btn"><i class="fas fa-ticket-alt"></i> Register Now</button>
     </div>
   </div>
+  
+  <!-- Event Card 3 -->
   <div class="event-card">
     <div class="event-top">
-      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" class="event-img" alt="Event Image">
+      <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80" 
+           class="event-img" 
+           alt="Hackathon"
+           onclick="openModal(this)">
       <div class="event-info">
-        <h2>Annual Tech Fest</h2>
-        <p>Join us for the biggest technical fest of the year with competitions, workshops, and guest lectures from industry experts.</p>
+        <h2>24-Hour Hackathon</h2>
+        <p>Put your coding skills to the test in our 24-hour hackathon. Build innovative solutions to real-world problems.</p>
       </div>
     </div>
 
     <div class="event-details">
-      <div><i class="fas fa-calendar-alt"></i>15–17 Dec</div>
-      <div><i class="fas fa-user"></i>CS Dept</div>
-      <div><i class="fas fa-map-marker-alt"></i>Auditorium</div>
+      <div><i class="fas fa-calendar-alt"></i>5–6 Feb</div>
+      <div><i class="fas fa-user"></i>IT Dept</div>
+      <div><i class="fas fa-map-marker-alt"></i>Computer Lab 3</div>
     </div>
 
     <div class="register-box">
       <button class="register-btn"><i class="fas fa-ticket-alt"></i> Register Now</button>
     </div>
   </div>
+  
+  <!-- Event Card 4 -->
   <div class="event-card">
     <div class="event-top">
-      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" class="event-img" alt="Event Image">
+      <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80" 
+           class="event-img" 
+           alt="Sports Day"
+           onclick="openModal(this)">
       <div class="event-info">
-        <h2>Annual Tech Fest</h2>
-        <p>Join us for the biggest technical fest of the year with competitions, workshops, and guest lectures from industry experts.</p>
+        <h2>Sports Day Championship</h2>
+        <p>Annual sports day featuring cricket, football, basketball, athletics and more. Show your sportsmanship!</p>
       </div>
     </div>
 
     <div class="event-details">
-      <div><i class="fas fa-calendar-alt"></i>15–17 Dec</div>
-      <div><i class="fas fa-user"></i>CS Dept</div>
-      <div><i class="fas fa-map-marker-alt"></i>Auditorium</div>
+      <div><i class="fas fa-calendar-alt"></i>10–12 Mar</div>
+      <div><i class="fas fa-user"></i>Sports Committee</div>
+      <div><i class="fas fa-map-marker-alt"></i>Sports Complex</div>
     </div>
 
     <div class="register-box">
       <button class="register-btn"><i class="fas fa-ticket-alt"></i> Register Now</button>
     </div>
   </div>
+  
+  <!-- Event Card 5 -->
   <div class="event-card">
     <div class="event-top">
-      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80" class="event-img" alt="Event Image">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" 
+           class="event-img" 
+           alt="Career Fair"
+           onclick="openModal(this)">
       <div class="event-info">
-        <h2>Annual Tech Fest</h2>
-        <p>Join us for the biggest technical fest of the year with competitions, workshops, and guest lectures from industry experts.</p>
+        <h2>Career Fair & Expo</h2>
+        <p>Connect with top companies and explore internship and job opportunities. Get your resume reviewed.</p>
       </div>
     </div>
 
     <div class="event-details">
-      <div><i class="fas fa-calendar-alt"></i>15–17 Dec</div>
-      <div><i class="fas fa-user"></i>CS Dept</div>
-      <div><i class="fas fa-map-marker-alt"></i>Auditorium</div>
+      <div><i class="fas fa-calendar-alt"></i>8 Apr</div>
+      <div><i class="fas fa-user"></i>Placement Cell</div>
+      <div><i class="fas fa-map-marker-alt"></i>Convention Center</div>
     </div>
 
     <div class="register-box">
@@ -274,7 +352,36 @@
     </div>
   </div>
 
-  <!-- You can duplicate more cards below with different details -->
+  <!-- The Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="expandedImg">
+  </div>
+
+  <script>
+    // Function to open modal with clicked image
+    function openModal(imgElement) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("expandedImg");
+      
+      modal.style.display = "block";
+      modalImg.src = imgElement.src;
+      modalImg.alt = imgElement.alt;
+    }
+
+    // Function to close modal
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside the image
+    window.onclick = function(event) {
+      const modal = document.getElementById("imageModal");
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
 
 </body>
 </html>

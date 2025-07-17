@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PYQs - ApnaBBD</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f8ff;
+      color: #333;
+    }
+
+    .back-arrow {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      padding: 8px 14px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: all 0.3s ease;
+      line-height: 1;
+    }
+
+    .back-arrow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, #0056b3, #00a6e0);
+    }
+
+    .back-arrow .arrow-icon {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 30px;
+      color: #0056b3;
+    }
+
+    p {
+      text-align: center;
+      margin: 10px 20px 20px;
+      font-size: 15px;
+      color: #555;
+    }
+
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto 20px;
+      padding: 0 20px;
+    }
+
+    #search {
+      width: 90%;
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 0 20px 100px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin: 30px 0 15px;
+      font-weight: bold;
+      color: #333;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .pyq-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px 22px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-bottom: 20px;
+    }
+
+    .subject-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      color: #0d1a40;
+    }
+
+    .subject-code {
+      margin: 4px 0 10px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .tags {
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e7f0ff;
+      color: #0056b3;
+      padding: 5px 10px;
+      font-size: 13px;
+      border-radius: 20px;
+      margin-right: 8px;
+      text-transform: uppercase;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .view-btn, .download-btn {
+      flex: 1;
+      padding: 10px 0;
+      text-align: center;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 15px;
+      display: inline-block;
+    }
+
+    .view-btn {
+      background-color: #e6f0ff;
+      color: #003d99;
+    }
+
+    .download-btn {
+      background-color: #142772;
+      color: white;
+    }
+
+    .index-bar {
+      position: fixed;
+      right: 2px;
+      top: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      z-index: 99;
+    }
+
+    .index-bar a {
+      text-decoration: none;
+      font-size: 12px;
+      color: #007bff;
+      padding: 2px;
+    }
+
+    .index-bar a:hover {
+      font-weight: bold;
+      color: #004494;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 24px; }
+      .section-title { font-size: 18px; }
+      .index-bar a { font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="back-arrow">
+  <span class="arrow-icon">&#8592;</span>
+  Back
+</a>
+
+<h1>Previous Year Questions (PYQs)</h1>
+<p>📘 Browse PYQs of different subjects below. You can view or download them directly.</p>
+
+<div class="search-box">
+  <input type="text" id="search" placeholder="Search subject...">
+</div>
+
+<div class="container" id="pyq-list">
+
+  <!-- A -->
+  <div id="A">
+    <div class="section-title">A</div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">AGILE DEVELOPMENT METHODOLOGY</h3>
+      <p class="subject-code" style="text-align: start;">ITBC3502</p>
+      <div class="tags">
+        <span class="tag">SCHOOL OF ENGINEERING</span>
+        <span class="tag">2024 -2025</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">CSE - IOTBC</span>
+        <span class="tag">SEMESTER</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AGILE%20DEVELOPMENT%20METHODOLOGY_2024_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AGILE%20DEVELOPMENT%20METHODOLOGY_2024_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+    
+    <div class="pyq-card">
+      <h3 class="subject-title">AGILE DEVELOPMENT METHODOLOGY</h3>
+      <p class="subject-code" style="text-align: start;">ITBC3502</p>
+      <div class="tags">
+        <span class="tag">SCHOOL OF ENGINEERING</span>
+        <span class="tag">2024 - 2025</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">CSE - IOTBC</span>
+        <span class="tag">FIRST SESSIONAL</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AGILE%20DEVELOPMENT%20METHODOLOGY_2024_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AGILE%20DEVELOPMENT%20METHODOLOGY_2024_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARTIFICIAL INTELLIGENCE IN MECHANICAL ENGINEERING SYSTEMS</h3>
+      <p class="subject-code" style="text-align: start;">BAI3302</p>
+      <div class="tags">
+        <span class="tag">SCHOOL OF ENGINEERING</span>
+        <span class="tag">2022 - 2023</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">CSE - AI</span>
+        <span class="tag">SEMESTER</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AI%20IN%20MECHANICAL%20ENGINEERING%20SYSTEMS_2022_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AI%20IN%20MECHANICAL%20ENGINEERING%20SYSTEMS_2022_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARTIFICIAL INTELLIGENCE IN MECHANICAL ENGINEERING SYSTEMS</h3>
+      <p class="subject-code" style="text-align: start;">NAI4302</p>
+      <div class="tags">
+        <span class="tag">SCHOOL OF ENGINEERING</span>
+        <span class="tag">2024- 2025</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">CSE - AI</span>
+        <span class="tag">SEMESTER</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AI%20IN%20MECHANICAL%20ENGINEERING%20SYSTEMS_2024_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AI%20IN%20MECHANICAL%20ENGINEERING%20SYSTEMS_2024_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARTIFICIAL INTELLIGENCE IN MECHANICAL ENGINEERING SYSTEMS</h3>
+      <p class="subject-code" style="text-align: start;">NAI4302</p>
+      <div class="tags">
+        <span class="tag">SCHOOL OF ENGINEERING</span>
+        <span class="tag">2024- 2025</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">CSE - AI</span>
+        <span class="tag">SECOND SESSIONAL</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AI%20IN%20MECHANICAL%20ENGINEERING%20SYSTEMS_2024_Sessional%202.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AI%20IN%20MECHANICAL%20ENGINEERING%20SYSTEMS_2024_Sessional%202.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARTIFICIAL INTELLIGENCE IN MECHANICAL ENGINEERING SYSTEMS</h3>
+      <p class="subject-code" style="text-align: start;">BAI3302</p>
+      <div class="tags">
+        <span class="tag">SCHOOL OF ENGINEERING</span>
+        <span class="tag">2023- 2024</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">AI, CCML, IOTBC</span>
+        <span class="tag">FIRST SESSIONAL</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AI%20IN%20MECHANICAL%20ENGINEERING%20SYSTEM_2023_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AI%20IN%20MECHANICAL%20ENGINEERING%20SYSTEM_2023_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARTIFICIAL INTELLIGENCE IN MECHANICAL ENGINEERING SYSTEMS</h3>
+      <p class="subject-code" style="text-align: start;">BAI3302</p>
+      <div class="tags">
+        <span class="tag">SCHOOL OF ENGINEERING</span>
+        <span class="tag">2023- 2024</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">AI, CCML, IOTBC</span>
+        <span class="tag">SECOND SESSIONAL</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AI%20IN%20MECHANICAL%20ENGINEERING%20SYSTEM_2023_Sessional%202.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AI%20IN%20MECHANICAL%20ENGINEERING%20SYSTEM_2023_Sessional%202.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL DESIGN II</h3>
+      <p class="subject-code" style="text-align: start;">AR1201</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20DESIGN%20II_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20DESIGN%20II_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL DESIGN IV</h3>
+      <p class="subject-code" style="text-align: start;">AR1401</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20DESIGN%20IV_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20DESIGN%20IV_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL DESIGN VIII</h3>
+      <p class="subject-code" style="text-align: start;">AR801</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20DESIGN%20VIII_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20DESIGN%20VIII_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL DESIGN VI</h3>
+      <p class="subject-code" style="text-align: start;">AR1601</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20DESIGN%20VI_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20DESIGN%20VI_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL DRAWING II</h3>
+      <p class="subject-code" style="text-align: start;">AR1204</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20DRAWING%20II_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20DRAWING%20II_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL STRUCTURE II</h3>
+      <p class="subject-code" style="text-align: start;">AR1203</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURE%20II_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURE%20II_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+    
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL STRUCTURE IV</h3>
+      <p class="subject-code" style="text-align: start;">AR1403</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURE%20IV_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURE%20IV_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL STRUCTURE VI</h3>
+      <p class="subject-code" style="text-align: start;">AR1603</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURE%20VI_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURE%20VI_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL STRUCTURES II</h3>
+      <p class="subject-code" style="text-align: start;">AR203</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURES%20II_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURES%20II_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL STRUCTURES IV</h3>
+      <p class="subject-code" style="text-align: start;">AR403</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURES%20IV_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURES%20IV_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARCHITECTURAL STRUCTURES VI</h3>
+      <p class="subject-code" style="text-align: start;">AR603</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURES%20VI_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARCHITECTURAL%20STRUCTURES%20VI_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARTIFICIAL INTELLIGENCE</h3>
+      <p class="subject-code" style="text-align: start;">BCADS1404</p>
+      <div class="tags">
+        <span class="tag">School of Computer Applications</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">BCA</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARTIFICIAL%20INTELLIGENCE_2023_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARTIFICIAL%20INTELLIGENCE_2023_Semester.pdf
+
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARTIFICIAL INTELLIGENCE</h3>
+      <p class="subject-code" style="text-align: start;">BCADS1404</p>
+      <div class="tags">
+        <span class="tag">School of Computer Applications</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">BCA</span>
+        <span class="tag">first Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARTIFICIAL%20INTELLIGENCE_2023_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARTIFICIAL%20INTELLIGENCE_2023_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARTIFICIAL INTELLIGENCE</h3>
+      <p class="subject-code" style="text-align: start;">BCS3701</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2024 - 25</span>
+        <span class="tag">B.tech</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARTIFICIAL%20INTELLIGENCE_2024_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARTIFICIAL%20INTELLIGENCE_2024_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARTIFICIAL INTELLIGENCE</h3>
+      <p class="subject-code" style="text-align: start;">BCS3701</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2024 - 25</span>
+        <span class="tag">B.tech</span>
+        <span class="tag">CSE</span>
+        <span class="tag">First Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARTIFICIAL%20INTELLIGENCE_2024_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARTIFICIAL%20INTELLIGENCE_2024_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">ARTIFICIAL INTELLIGENCE</h3>
+      <p class="subject-code" style="text-align: start;">BCS3701</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2024 - 25</span>
+        <span class="tag">B.tech</span>
+        <span class="tag">CSE</span>
+        <span class="tag">Second Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARTIFICIAL%20INTELLIGENCE_2024_Sessional%202.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/ARTIFICIAL%20INTELLIGENCE_2024_Sessional%202.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">AUTOMATA THEORY AND FORMAL LANGUAGES</h3>
+      <p class="subject-code" style="text-align: start;">BCS3504</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2024 - 25</span>
+        <span class="tag">B.tech</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY%20AND%20FORMAL%20LANGUAGES_2024_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY%20AND%20FORMAL%20LANGUAGES_2024_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">AUTOMATA THEORY AND FORMAL LANGUAGES</h3>
+      <p class="subject-code" style="text-align: start;">BCS3504</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2024 - 25</span>
+        <span class="tag">B.tech</span>
+        <span class="tag">first Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY%20AND%20FORMAL%20LANGUAGES_2024_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY%20AND%20FORMAL%20LANGUAGES_2024_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">AUTOMATA THEORY AND FORMAL LANGUAGES</h3>
+      <p class="subject-code" style="text-align: start;">BCS3504</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2024 - 25</span>
+        <span class="tag">B.tech</span>
+        <span class="tag">Second Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY%20AND%20FORMAL%20LANGUAGES_2024_Sessional%202.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY%20AND%20FORMAL%20LANGUAGES_2024_Sessional%202.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">AUTOMATA THEORY</h3>
+      <p class="subject-code" style="text-align: start;">BCS3504</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">B.tech</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY_2023_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY_2023_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">AUTOMATA THEORY</h3>
+      <p class="subject-code" style="text-align: start;">BCS3504</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">B.tech</span>
+        <span class="tag">CSE, AI, CCML</span>
+        <span class="tag">First Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY_2023_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY_2023_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">AUTOMATA THEORY</h3>
+      <p class="subject-code" style="text-align: start;">BCS3504</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">B.tech</span>
+        <span class="tag">CSE, AI, CCML</span>
+        <span class="tag">Second Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY_2023_Sessional%202.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/AUTOMATA%20THEORY_2023_Sessional%202.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <!-- Add more .pyq-card here -->
+
+  </div>
+
+  <!-- B -->
+  <div id="B">
+    <div class="section-title">B</div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASIC ELECTRICAL ENGINEERING</h3>
+      <p class="subject-code" style="text-align: start;">BEE3201</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">CSE</span>
+        <span class="tag">First Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRICAL%20ENGINEERING_2021_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRICAL%20ENGINEERING_2021_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASIC ELECTRICAL ENGINEERING</h3>
+      <p class="subject-code" style="text-align: start;">BEE3101</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2022 - 23</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRICAL%20ENGINEERING_2022_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRICAL%20ENGINEERING_2022_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASIC ELECTRICAL ENGINEERING</h3>
+      <p class="subject-code" style="text-align: start;">BEE3201</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2022 - 23</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">First Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRICAL%20ENGINEERING_2022_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRICAL%20ENGINEERING_2022_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASIC ELECTRICAL ENGINEERING</h3>
+      <p class="subject-code" style="text-align: start;">NEE4101</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">First Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRICAL%20ENGINEERING_2023_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRICAL%20ENGINEERING_2023_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASIC ELECTRONICS ENGINEERING</h3>
+      <p class="subject-code" style="text-align: start;">BEC3201</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2022 - 23</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2022_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2022_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASIC ELECTRONICS ENGINEERING</h3>
+      <p class="subject-code" style="text-align: start;">BEC3201</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2022 - 23</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">first Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2022_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2022_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASIC ELECTRONICS ENGINEERING</h3>
+      <p class="subject-code" style="text-align: start;">BEC3201</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2022 - 23</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">second Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2022_Sessional%202.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2022_Sessional%202.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASIC ELECTRONICS ENGINEERING</h3>
+      <p class="subject-code" style="text-align: start;">NEC4101</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2023_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2023_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASIC ELECTRONICS ENGINEERING</h3>
+      <p class="subject-code" style="text-align: start;">NEC4101</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">first Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2023_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2023_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASIC ELECTRONICS ENGINEERING</h3>
+      <p class="subject-code" style="text-align: start;">NEC4101</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">B.TECH</span>
+        <span class="tag">Second Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2023_Sessional%202.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2023_Sessional%202.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASICS OF DOT NET FRAMEWORK AND C#</h3>
+      <p class="subject-code" style="text-align: start;">BCA4403</p>
+      <div class="tags">
+        <span class="tag">School of Computer Applications</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">BCA</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2023_Sessional%202.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASIC%20ELECTRONICS%20ENGINEERING_2023_Sessional%202.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BASICS OF PYTHON PROGRAMMING</h3>
+      <p class="subject-code" style="text-align: start;">BCA4403</p>
+      <div class="tags">
+        <span class="tag">School of Computer Applications</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">BCA</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASICS%20OF%20PYTHON%20PROGRAMMING_2023_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BASICS%20OF%20PYTHON%20PROGRAMMING_2023_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BIG DATA FUNDAMENTALS</h3>
+      <p class="subject-code" style="text-align: start;">BCADS1401</p>
+      <div class="tags">
+        <span class="tag">School of Computer Applications</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">BCA</span>
+        <span class="tag">Second Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BIG%20DATA%20FUNDAMENTALS_2023_Sessional%202.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BIG%20DATA%20FUNDAMENTALS_2023_Sessional%202.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BLOCKCHAIN ESSENTIALS</h3>
+      <p class="subject-code" style="text-align: start;">ITBC3401</p>
+      <div class="tags">
+        <span class="tag">School of ENGINEERING</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">B.Tech</span>
+        <span class="tag">CSE - AIBC</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BLOCKCHAIN%20ESSENTIALS_2023_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BLOCKCHAIN%20ESSENTIALS_2023_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BUILDING CONSTRUCTION AND MATERIALS II</h3>
+      <p class="subject-code" style="text-align: start;">AR1202</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch.</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUILDING%20CONSTRUCTION%20AND%20MATERIALS%20II_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUILDING%20CONSTRUCTION%20AND%20MATERIALS%20II_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BUILDING SERVICES I</h3>
+      <p class="subject-code" style="text-align: start;">AR406</p>
+      <div class="tags">
+        <span class="tag">School of Architecture & Planning</span>
+        <span class="tag">2021 - 22</span>
+        <span class="tag">B.Arch.</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUILDING%20SERVICES%20I_2021_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUILDING%20SERVICES%20I_2021_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BUSINESS ETHICS AND HUMAN VALUES</h3>
+      <p class="subject-code" style="text-align: start;">BBA4503</p>
+      <div class="tags">
+        <span class="tag">School of Management</span>
+        <span class="tag">2024 - 25</span>
+        <span class="tag">BBA</span>
+        <span class="tag">first Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUSINESS%20ETHICS%20AND%20HUMAN%20VALUES_2024_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUSINESS%20ETHICS%20AND%20HUMAN%20VALUES_2024_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BUSINESS LAW</h3>
+      <p class="subject-code" style="text-align: start;">BBA3303</p>
+      <div class="tags">
+        <span class="tag">School of Management</span>
+        <span class="tag">2023 - 24</span>
+        <span class="tag">BBA</span>
+        <span class="tag">Semester</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUSINESS%20LAW_2023_Semester.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUSINESS%20LAW_2023_Semester.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BUSINESS POLICY AND STRATEGY</h3>
+      <p class="subject-code" style="text-align: start;">BBA4501</p>
+      <div class="tags">
+        <span class="tag">School of Management</span>
+        <span class="tag">2024 - 25</span>
+        <span class="tag">BBA</span>
+        <span class="tag">first Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUSINESS%20POLICY%20AND%20STRATEGY_2024_Sessional%201.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUSINESS%20POLICY%20AND%20STRATEGY_2024_Sessional%201.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+    <div class="pyq-card">
+      <h3 class="subject-title">BUSINESS POLICY AND STRATEGY</h3>
+      <p class="subject-code" style="text-align: start;">BBA4501</p>
+      <div class="tags">
+        <span class="tag">School of Management</span>                       
+        <span class="tag">2024 - 25</span>
+        <span class="tag">BBA</span>
+        <span class="tag">second Sessional</span>
+      </div>
+      <div class="actions">
+        <a href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUSINESS%20POLICY%20AND%20STRATEGY_2024_Sessional%202.pdf
+        " target="_blank" class="view-btn">👁️ View</a>
+        <a href="https://raw.githubusercontent.com/priyanshu-kumar21/Apnabbd/main/PYQs/BUSINESS%20POLICY%20AND%20STRATEGY_2024_Sessional%202.pdf
+        " download class="download-btn">⬇️ Download</a>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+</div>
+
+<!-- A-Z Index Bar -->
+<div class="index-bar">
+  <a href="#A">A</a>
+  <a href="#B">B</a>
+  <a href="#C">C</a>
+  <a href="#D">D</a>
+  <a href="#E">E</a>
+  <a href="#F">F</a>
+  <a href="#G">G</a>
+  <a href="#H">H</a>
+  <a href="#I">I</a>
+  <a href="#J">J</a>
+  <a href="#K">K</a>
+  <a href="#L">L</a>
+  <a href="#M">M</a>
+  <a href="#N">N</a>
+  <a href="#O">O</a>
+  <a href="#P">P</a>
+  <a href="#Q">Q</a>
+  <a href="#R">R</a>
+  <a href="#S">S</a>
+  <a href="#T">T</a>
+  <a href="#U">U</a>
+  <a href="#V">V</a>
+  <a href="#W">W</a>
+  <a href="#X">X</a>
+  <a href="#Y">Y</a>
+  <a href="#Z">Z</a>
+</div>
+
+<!-- Search Function -->
+<script>
+  const search = document.getElementById('search');
+  const pyqCards = document.querySelectorAll('.pyq-card');
+
+  search.addEventListener('keyup', () => {
+    const value = search.value.toLowerCase();
+    pyqCards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(value) ? 'block' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

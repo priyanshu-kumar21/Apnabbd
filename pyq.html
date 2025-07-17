@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PYQs - ApnaBBD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -12,44 +13,32 @@
       color: #333;
     }
 
-    .back-arrow {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(135deg, #007bff, #00c6ff);
-      padding: 8px 14px;
-      border-radius: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      z-index: 100;
-      transition: all 0.3s ease;
-      line-height: 1;
-    }
+        .back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
 
-    .back-arrow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-      background: linear-gradient(135deg, #0056b3, #00a6e0);
-    }
-
-    .back-arrow .arrow-icon {
-      display: flex;
-      align-items: center;
-      font-size: 18px;
-      line-height: 1;
-    }
+.back-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #0056b3, #009fe3);
+}
 
     h1 {
       text-align: center;
       margin-top: 60px;
       font-size: 30px;
-      color: #0056b3;
+      color: #6366f1;
     }
 
     p {
@@ -147,7 +136,7 @@
     }
 
     .download-btn {
-      background-color: #142772;
+       background: linear-gradient(135deg, #6366f1, #8b5cf6);
       color: white;
     }
 
@@ -182,9 +171,8 @@
 </head>
 <body>
 
-<a href="index.html" class="back-arrow">
-  <span class="arrow-icon">&#8592;</span>
-  Back
+<a href="index.html" class="back-button">
+    <i class="fas fa-arrow-left"></i>
 </a>
 
 <h1>Previous Year Questions (PYQs)</h1>
@@ -1106,6 +1094,29 @@
       card.style.display = text.includes(value) ? 'block' : 'none';
     });
   });
+</script>
+
+
+<script>
+  const placeholderText = "Search subject...";
+  const searchInput = document.getElementById("search");
+
+  let i = 0;
+  function typeEffect() {
+    if (i < placeholderText.length) {
+      searchInput.setAttribute("placeholder", placeholderText.substring(0, i + 1));
+      i++;
+      setTimeout(typeEffect, 100); // typing speed
+    } else {
+      setTimeout(() => {
+        i = 0;
+        searchInput.setAttribute("placeholder", "");
+        setTimeout(typeEffect, 1000); // wait before restart
+      }, 2000); // how long the full text stays
+    }
+  }
+
+  typeEffect();
 </script>
 
 </body>
